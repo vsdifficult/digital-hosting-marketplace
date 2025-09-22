@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "IFrNHnZAUQw=",
+  "dgSpecHash": "TzxqcSUt5PI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Difficult\\digital-hosting-marketplace\\src\\HostMarket.Api\\HostMarket.Api.csproj",
+  "projectFilePath": "C:\\Users\\Александр\\source\\repos\\digital-hosting-marketplace\\src\\HostMarket.Api\\HostMarket.Api.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Difficult\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.1\\microsoft.aspnetcore.openapi.9.0.1.nupkg.sha512",
-    "C:\\Users\\Difficult\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+    "C:\\Users\\Александр\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.1\\microsoft.aspnetcore.openapi.9.0.1.nupkg.sha512",
+    "C:\\Users\\Александр\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
   ],
   "logs": []
 }
