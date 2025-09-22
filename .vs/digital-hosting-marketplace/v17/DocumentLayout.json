@@ -1,0 +1,117 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\asus\\Desktop\\newMarket\\digital-hosting-marketplace\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3995DEFA-F601-AB22-0D5D-292DED58CF48}|src\\HostMarket.Shared\\HostMarket.Shared.csproj|c:\\users\\asus\\desktop\\newmarket\\digital-hosting-marketplace\\src\\hostmarket.shared\\models\\enum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3995DEFA-F601-AB22-0D5D-292DED58CF48}|src\\HostMarket.Shared\\HostMarket.Shared.csproj|solutionrelative:src\\hostmarket.shared\\models\\enum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|c:\\users\\asus\\desktop\\newmarket\\digital-hosting-marketplace\\src\\hostmarket.infrastructure\\data\\entityframework\\configurations\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|solutionrelative:src\\hostmarket.infrastructure\\data\\entityframework\\configurations\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|c:\\users\\asus\\desktop\\newmarket\\digital-hosting-marketplace\\src\\hostmarket.infrastructure\\data\\entityframework\\configurations\\serverconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|solutionrelative:src\\hostmarket.infrastructure\\data\\entityframework\\configurations\\serverconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|c:\\users\\asus\\desktop\\newmarket\\digital-hosting-marketplace\\src\\hostmarket.infrastructure\\data\\entities\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|solutionrelative:src\\hostmarket.infrastructure\\data\\entities\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|c:\\users\\asus\\desktop\\newmarket\\digital-hosting-marketplace\\src\\hostmarket.infrastructure\\data\\entities\\serverentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|solutionrelative:src\\hostmarket.infrastructure\\data\\entities\\serverentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|c:\\users\\asus\\desktop\\newmarket\\digital-hosting-marketplace\\src\\hostmarket.infrastructure\\data\\entities\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|solutionrelative:src\\hostmarket.infrastructure\\data\\entities\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Enum.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\newMarket\\digital-hosting-marketplace\\src\\HostMarket.Shared\\Models\\Enum.cs",
+              "RelativeDocumentMoniker": "src\\HostMarket.Shared\\Models\\Enum.cs",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\newMarket\\digital-hosting-marketplace\\src\\HostMarket.Shared\\Models\\Enum.cs",
+              "RelativeToolTip": "src\\HostMarket.Shared\\Models\\Enum.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T17:39:12.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\newMarket\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Configurations\\UserConfiguration.cs",
+              "RelativeDocumentMoniker": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Configurations\\UserConfiguration.cs",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\newMarket\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Configurations\\UserConfiguration.cs",
+              "RelativeToolTip": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Configurations\\UserConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T17:39:08.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ServerConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\newMarket\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Configurations\\ServerConfiguration.cs",
+              "RelativeDocumentMoniker": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Configurations\\ServerConfiguration.cs",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\newMarket\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Configurations\\ServerConfiguration.cs",
+              "RelativeToolTip": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Configurations\\ServerConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T17:39:05.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserEntity.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\newMarket\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\Entities\\UserEntity.cs",
+              "RelativeDocumentMoniker": "src\\HostMarket.Infrastructure\\Data\\Entities\\UserEntity.cs",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\newMarket\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\Entities\\UserEntity.cs",
+              "RelativeToolTip": "src\\HostMarket.Infrastructure\\Data\\Entities\\UserEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T17:38:59.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ServerEntity.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\newMarket\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\Entities\\ServerEntity.cs",
+              "RelativeDocumentMoniker": "src\\HostMarket.Infrastructure\\Data\\Entities\\ServerEntity.cs",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\newMarket\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\Entities\\ServerEntity.cs",
+              "RelativeToolTip": "src\\HostMarket.Infrastructure\\Data\\Entities\\ServerEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T17:38:54.592Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\newMarket\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\Entities\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "src\\HostMarket.Infrastructure\\Data\\Entities\\BaseEntity.cs",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\newMarket\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\Entities\\BaseEntity.cs",
+              "RelativeToolTip": "src\\HostMarket.Infrastructure\\Data\\Entities\\BaseEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T17:38:51.909Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
