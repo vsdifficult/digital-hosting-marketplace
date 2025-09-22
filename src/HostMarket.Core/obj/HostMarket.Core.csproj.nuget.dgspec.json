@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Difficult\\digital-hosting-marketplace\\src\\HostMarket.Core\\HostMarket.Core.csproj": {}
+    "C:\\Users\\asus\\Desktop\\newMarket\\digital-hosting-marketplace\\src\\HostMarket.Core\\HostMarket.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Difficult\\digital-hosting-marketplace\\src\\HostMarket.Core\\HostMarket.Core.csproj": {
+    "C:\\Users\\asus\\Desktop\\newMarket\\digital-hosting-marketplace\\src\\HostMarket.Core\\HostMarket.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Difficult\\digital-hosting-marketplace\\src\\HostMarket.Core\\HostMarket.Core.csproj",
+        "projectUniqueName": "C:\\Users\\asus\\Desktop\\newMarket\\digital-hosting-marketplace\\src\\HostMarket.Core\\HostMarket.Core.csproj",
         "projectName": "HostMarket.Core",
-        "projectPath": "C:\\Users\\Difficult\\digital-hosting-marketplace\\src\\HostMarket.Core\\HostMarket.Core.csproj",
-        "packagesPath": "C:\\Users\\Difficult\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Difficult\\digital-hosting-marketplace\\src\\HostMarket.Core\\obj\\",
+        "projectPath": "C:\\Users\\asus\\Desktop\\newMarket\\digital-hosting-marketplace\\src\\HostMarket.Core\\HostMarket.Core.csproj",
+        "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\asus\\Desktop\\newMarket\\digital-hosting-marketplace\\src\\HostMarket.Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Difficult\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -37,8 +44,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net9.0": {
@@ -54,12 +60,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
