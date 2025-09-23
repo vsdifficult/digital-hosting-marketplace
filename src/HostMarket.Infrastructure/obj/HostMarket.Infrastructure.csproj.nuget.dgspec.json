@@ -1,33 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Difficult\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj": {}
+    "C:\\Users\\Александр\\source\\repos\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Difficult\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj": {
+    "C:\\Users\\Александр\\source\\repos\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Difficult\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Александр\\source\\repos\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj",
         "projectName": "HostMarket.Infrastructure",
-        "projectPath": "C:\\Users\\Difficult\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Difficult\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Difficult\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\Александр\\source\\repos\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Александр\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Александр\\source\\repos\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Difficult\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Александр\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\Difficult\\digital-hosting-marketplace\\src\\HostMarket.Shared\\HostMarket.Shared.csproj": {
-                "projectPath": "C:\\Users\\Difficult\\digital-hosting-marketplace\\src\\HostMarket.Shared\\HostMarket.Shared.csproj"
+              "C:\\Users\\Александр\\source\\repos\\digital-hosting-marketplace\\src\\HostMarket.Shared\\HostMarket.Shared.csproj": {
+                "projectPath": "C:\\Users\\Александр\\source\\repos\\digital-hosting-marketplace\\src\\HostMarket.Shared\\HostMarket.Shared.csproj"
               }
             }
           }
@@ -42,7 +48,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -77,26 +83,32 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Difficult\\digital-hosting-marketplace\\src\\HostMarket.Shared\\HostMarket.Shared.csproj": {
+    "C:\\Users\\Александр\\source\\repos\\digital-hosting-marketplace\\src\\HostMarket.Shared\\HostMarket.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Difficult\\digital-hosting-marketplace\\src\\HostMarket.Shared\\HostMarket.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Александр\\source\\repos\\digital-hosting-marketplace\\src\\HostMarket.Shared\\HostMarket.Shared.csproj",
         "projectName": "HostMarket.Shared",
-        "projectPath": "C:\\Users\\Difficult\\digital-hosting-marketplace\\src\\HostMarket.Shared\\HostMarket.Shared.csproj",
-        "packagesPath": "C:\\Users\\Difficult\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Difficult\\digital-hosting-marketplace\\src\\HostMarket.Shared\\obj\\",
+        "projectPath": "C:\\Users\\Александр\\source\\repos\\digital-hosting-marketplace\\src\\HostMarket.Shared\\HostMarket.Shared.csproj",
+        "packagesPath": "C:\\Users\\Александр\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Александр\\source\\repos\\digital-hosting-marketplace\\src\\HostMarket.Shared\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Difficult\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Александр\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -115,7 +127,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -136,7 +148,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

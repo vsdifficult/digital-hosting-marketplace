@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HostMarket.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3f944e77bffe854eda29987567be113a4902982")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+07d78da8f2346bfa6627145da62d0621513e434f")]
 [assembly: System.Reflection.AssemblyProductAttribute("HostMarket.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HostMarket.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
