@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using Microsoft.EntityFrameworkCore; 
 using HostMarket.Infrastructure.Data.Entities;
-
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace HostMarket.Infrastructure.Data.EntityFramework.Configurations
 {
-    internal class UserConfiguration : IEntityTypeConfiguration<UserEntity>
+    public class UserConfiguration : IEntityTypeConfiguration<UserEntity>
     {
         public void Configure(EntityTypeBuilder<UserEntity> builder)
         {
-
+            
         }
     }
 }
