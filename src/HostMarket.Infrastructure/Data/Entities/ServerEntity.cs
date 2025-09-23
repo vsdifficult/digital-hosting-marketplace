@@ -8,5 +8,9 @@ namespace HostMarket.Infrastructure.Data.Entities
         public string Description { get; set; }
         public decimal Price { get; set; }
         public ServerStatus Status { get; set; }
+
+        // Navigation 
+        
+        public UserEntity? User { get; set; }
     }
 }

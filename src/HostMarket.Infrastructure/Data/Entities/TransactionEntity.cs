@@ -9,5 +9,9 @@ public class TransactionEntity : BaseEntity
 
     public decimal Amount { get; set; }
 
-    public DateTime transactionDate { get; set; }
+    public DateTime transactionDate { get; set; } 
+
+    // Navigation 
+        
+    public UserEntity? User { get; set; }
 }

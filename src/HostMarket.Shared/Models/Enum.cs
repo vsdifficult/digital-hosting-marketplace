@@ -4,11 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HostMarket.Shared.Models
+namespace HostMarket.Shared.Models; 
+
+public enum ServerStatus
 {
-    public enum ServerStatus
-    {
-        Available,
-        Purchased
-    }
+    Available,
+    Purchased
 }
+
+public enum Status
+{
+    Active, 
+    Deleted
+}
+

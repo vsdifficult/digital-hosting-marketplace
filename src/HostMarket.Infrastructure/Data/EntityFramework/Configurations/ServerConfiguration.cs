@@ -8,7 +8,7 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Configurations
     {
         public void Configure(EntityTypeBuilder<ServerEntity> builder)
         {
-
+            
         }
     }
 }
