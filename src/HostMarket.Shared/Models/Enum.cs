@@ -17,4 +17,9 @@ public enum Status
     Active, 
     Deleted
 }
+public enum UserRole
+{
+    Admin,
+    User
+}
 
