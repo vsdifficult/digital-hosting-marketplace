@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HostMarket.Shared\HostMarket.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
