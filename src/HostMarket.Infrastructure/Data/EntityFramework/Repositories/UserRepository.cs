@@ -23,6 +23,7 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Repositories
         {
             var userEntity = UserMapper.FromUserDTOToEntity(entity);
             userEntity.Id = Guid.NewGuid();
+            userEntity.Balance = 1000;
 
             await _context.Users.AddAsync(userEntity);
             await _context.SaveChangesAsync();
@@ -65,9 +66,12 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Repositories
             return user == null ? null : UserMapper.FromEntityToDto(user);
         }
 
-        public Task<List<UserDTO>> GetUnverifiedOlderThanAsync(DateTime cutoff)
+        public async Task<List<UserDTO>> GetUnverifiedOlderThanAsync(DateTime cutoff)
         {
-            throw new NotImplementedException();
+            return await _context.Users
+              .Where(u => !u.IsVerify && u.CreateAt < cutoff)
+              .Select(u => UserMapper.FromEntityToDto(u))
+              .ToListAsync();
         }
 
         public async Task<int> GetUserCountAsync()
@@ -105,9 +109,15 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Repositories
             return await _context.SaveChangesAsync() > 0;
         }
 
-        public Task<bool> SetVerificationCodeAsync(string email, string code)
+        public async Task<bool> SetVerificationCodeAsync(string email, string code)
         {
-            throw new NotImplementedException();
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+            if (user == null) return false;
+
+            user.Code = code;
+            user.UpdateAt = DateTime.UtcNow;
+
+            return await _context.SaveChangesAsync() > 0;
         }
 
         public async Task<bool> UpdateAsync(UserDTO entity)

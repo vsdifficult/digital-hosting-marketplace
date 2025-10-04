@@ -3,28 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|c:\\users\\asus\\desktop\\market\\digital-hosting-marketplace\\src\\hostmarket.infrastructure\\data\\entityframework\\mappers\\usermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|solutionrelative:src\\hostmarket.infrastructure\\data\\entityframework\\mappers\\usermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|c:\\users\\asus\\desktop\\market\\digital-hosting-marketplace\\src\\hostmarket.infrastructure\\data\\entityframework\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|solutionrelative:src\\hostmarket.infrastructure\\data\\entityframework\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88CDF236-78D3-CD65-5653-B90892E26B13}|src\\HostMarket.Core\\HostMarket.Core.csproj|c:\\users\\asus\\desktop\\market\\digital-hosting-marketplace\\src\\hostmarket.core\\services\\interfaces\\iauthenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88CDF236-78D3-CD65-5653-B90892E26B13}|src\\HostMarket.Core\\HostMarket.Core.csproj|solutionrelative:src\\hostmarket.core\\services\\interfaces\\iauthenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|c:\\users\\asus\\desktop\\market\\digital-hosting-marketplace\\src\\hostmarket.infrastructure\\data\\entityframework\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|solutionrelative:src\\hostmarket.infrastructure\\data\\entityframework\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3995DEFA-F601-AB22-0D5D-292DED58CF48}|src\\HostMarket.Shared\\HostMarket.Shared.csproj|c:\\users\\asus\\desktop\\market\\digital-hosting-marketplace\\src\\hostmarket.shared\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3995DEFA-F601-AB22-0D5D-292DED58CF48}|src\\HostMarket.Shared\\HostMarket.Shared.csproj|solutionrelative:src\\hostmarket.shared\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|c:\\users\\asus\\desktop\\market\\digital-hosting-marketplace\\src\\hostmarket.infrastructure\\data\\entityframework\\repositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|solutionrelative:src\\hostmarket.infrastructure\\data\\entityframework\\repositories\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3995DEFA-F601-AB22-0D5D-292DED58CF48}|src\\HostMarket.Shared\\HostMarket.Shared.csproj|c:\\users\\asus\\desktop\\market\\digital-hosting-marketplace\\src\\hostmarket.shared\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3995DEFA-F601-AB22-0D5D-292DED58CF48}|src\\HostMarket.Shared\\HostMarket.Shared.csproj|solutionrelative:src\\hostmarket.shared\\dto\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|c:\\users\\asus\\desktop\\market\\digital-hosting-marketplace\\src\\hostmarket.infrastructure\\data\\entityframework\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|solutionrelative:src\\hostmarket.infrastructure\\data\\entityframework\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|c:\\users\\asus\\desktop\\market\\digital-hosting-marketplace\\src\\hostmarket.infrastructure\\data\\entityframework\\mappers\\usermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|solutionrelative:src\\hostmarket.infrastructure\\data\\entityframework\\mappers\\usermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|c:\\users\\asus\\desktop\\market\\digital-hosting-marketplace\\src\\hostmarket.infrastructure\\data\\entityframework\\configurations\\userconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,36 +27,8 @@
       "RelativeMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|solutionrelative:src\\hostmarket.infrastructure\\data\\entities\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3995DEFA-F601-AB22-0D5D-292DED58CF48}|src\\HostMarket.Shared\\HostMarket.Shared.csproj|c:\\users\\asus\\desktop\\market\\digital-hosting-marketplace\\src\\hostmarket.shared\\dto\\userlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3995DEFA-F601-AB22-0D5D-292DED58CF48}|src\\HostMarket.Shared\\HostMarket.Shared.csproj|solutionrelative:src\\hostmarket.shared\\dto\\userlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3995DEFA-F601-AB22-0D5D-292DED58CF48}|src\\HostMarket.Shared\\HostMarket.Shared.csproj|c:\\users\\asus\\desktop\\market\\digital-hosting-marketplace\\src\\hostmarket.shared\\dto\\emailverificationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3995DEFA-F601-AB22-0D5D-292DED58CF48}|src\\HostMarket.Shared\\HostMarket.Shared.csproj|solutionrelative:src\\hostmarket.shared\\dto\\emailverificationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|c:\\users\\asus\\desktop\\market\\digital-hosting-marketplace\\src\\hostmarket.infrastructure\\auth\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|solutionrelative:src\\hostmarket.infrastructure\\auth\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3995DEFA-F601-AB22-0D5D-292DED58CF48}|src\\HostMarket.Shared\\HostMarket.Shared.csproj|c:\\users\\asus\\desktop\\market\\digital-hosting-marketplace\\src\\hostmarket.shared\\dto\\createuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3995DEFA-F601-AB22-0D5D-292DED58CF48}|src\\HostMarket.Shared\\HostMarket.Shared.csproj|solutionrelative:src\\hostmarket.shared\\dto\\createuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3995DEFA-F601-AB22-0D5D-292DED58CF48}|src\\HostMarket.Shared\\HostMarket.Shared.csproj|c:\\users\\asus\\desktop\\market\\digital-hosting-marketplace\\src\\hostmarket.shared\\dto\\createserverdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3995DEFA-F601-AB22-0D5D-292DED58CF48}|src\\HostMarket.Shared\\HostMarket.Shared.csproj|solutionrelative:src\\hostmarket.shared\\dto\\createserverdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|c:\\users\\asus\\desktop\\market\\digital-hosting-marketplace\\src\\hostmarket.infrastructure\\data\\entities\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|solutionrelative:src\\hostmarket.infrastructure\\data\\entities\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3995DEFA-F601-AB22-0D5D-292DED58CF48}|src\\HostMarket.Shared\\HostMarket.Shared.csproj|c:\\users\\asus\\desktop\\market\\digital-hosting-marketplace\\src\\hostmarket.shared\\dto\\serverdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3995DEFA-F601-AB22-0D5D-292DED58CF48}|src\\HostMarket.Shared\\HostMarket.Shared.csproj|solutionrelative:src\\hostmarket.shared\\dto\\serverdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|c:\\users\\asus\\desktop\\market\\digital-hosting-marketplace\\src\\hostmarket.infrastructure\\data\\entityframework\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{36925418-97BB-A0E6-339E-257A2239B519}|src\\HostMarket.Infrastructure\\HostMarket.Infrastructure.csproj|solutionrelative:src\\hostmarket.infrastructure\\data\\entityframework\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{88CDF236-78D3-CD65-5653-B90892E26B13}|src\\HostMarket.Core\\HostMarket.Core.csproj|c:\\users\\asus\\desktop\\market\\digital-hosting-marketplace\\src\\hostmarket.core\\services\\interfaces\\iauthenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88CDF236-78D3-CD65-5653-B90892E26B13}|src\\HostMarket.Core\\HostMarket.Core.csproj|solutionrelative:src\\hostmarket.core\\services\\interfaces\\iauthenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,214 +38,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 293,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Configurations\\UserConfiguration.cs",
-              "RelativeDocumentMoniker": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Configurations\\UserConfiguration.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Configurations\\UserConfiguration.cs",
-              "RelativeToolTip": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Configurations\\UserConfiguration.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T17:39:39.717Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UserLoginDTO.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Shared\\DTO\\UserLoginDTO.cs",
-              "RelativeDocumentMoniker": "src\\HostMarket.Shared\\DTO\\UserLoginDTO.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Shared\\DTO\\UserLoginDTO.cs",
-              "RelativeToolTip": "src\\HostMarket.Shared\\DTO\\UserLoginDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T17:34:33.277Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IAuthenticationService.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Core\\Services\\Interfaces\\IAuthenticationService.cs",
-              "RelativeDocumentMoniker": "src\\HostMarket.Core\\Services\\Interfaces\\IAuthenticationService.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Core\\Services\\Interfaces\\IAuthenticationService.cs",
-              "RelativeToolTip": "src\\HostMarket.Core\\Services\\Interfaces\\IAuthenticationService.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T15:53:58.232Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Auth\\AuthService.cs",
-              "RelativeDocumentMoniker": "src\\HostMarket.Infrastructure\\Auth\\AuthService.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Auth\\AuthService.cs",
-              "RelativeToolTip": "src\\HostMarket.Infrastructure\\Auth\\AuthService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T15:53:41.291Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "BaseEntity.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\Entities\\BaseEntity.cs",
-              "RelativeDocumentMoniker": "src\\HostMarket.Infrastructure\\Data\\Entities\\BaseEntity.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\Entities\\BaseEntity.cs",
-              "RelativeToolTip": "src\\HostMarket.Infrastructure\\Data\\Entities\\BaseEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T15:51:23.256Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CreateServerDTO.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Shared\\DTO\\CreateServerDTO.cs",
-              "RelativeDocumentMoniker": "src\\HostMarket.Shared\\DTO\\CreateServerDTO.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Shared\\DTO\\CreateServerDTO.cs",
-              "RelativeToolTip": "src\\HostMarket.Shared\\DTO\\CreateServerDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T15:50:46.483Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "CreateUserDTO.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Shared\\DTO\\CreateUserDTO.cs",
-              "RelativeDocumentMoniker": "src\\HostMarket.Shared\\DTO\\CreateUserDTO.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Shared\\DTO\\CreateUserDTO.cs",
-              "RelativeToolTip": "src\\HostMarket.Shared\\DTO\\CreateUserDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T15:50:44.213Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "EmailVerificationDTO.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Shared\\DTO\\EmailVerificationDTO.cs",
-              "RelativeDocumentMoniker": "src\\HostMarket.Shared\\DTO\\EmailVerificationDTO.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Shared\\DTO\\EmailVerificationDTO.cs",
-              "RelativeToolTip": "src\\HostMarket.Shared\\DTO\\EmailVerificationDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T15:50:41.062Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ServerDTO.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Shared\\DTO\\ServerDTO.cs",
-              "RelativeDocumentMoniker": "src\\HostMarket.Shared\\DTO\\ServerDTO.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Shared\\DTO\\ServerDTO.cs",
-              "RelativeToolTip": "src\\HostMarket.Shared\\DTO\\ServerDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T15:50:39.589Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "UserDTO.cs",
               "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Shared\\DTO\\UserDTO.cs",
               "RelativeDocumentMoniker": "src\\HostMarket.Shared\\DTO\\UserDTO.cs",
               "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Shared\\DTO\\UserDTO.cs",
               "RelativeToolTip": "src\\HostMarket.Shared\\DTO\\UserDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAABMAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T15:49:59.058Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UserEntity.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\Entities\\UserEntity.cs",
-              "RelativeDocumentMoniker": "src\\HostMarket.Infrastructure\\Data\\Entities\\UserEntity.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\Entities\\UserEntity.cs",
-              "RelativeToolTip": "src\\HostMarket.Infrastructure\\Data\\Entities\\UserEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T15:49:36.454Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserMapper.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Mappers\\UserMapper.cs",
-              "RelativeDocumentMoniker": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Mappers\\UserMapper.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Mappers\\UserMapper.cs",
-              "RelativeToolTip": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Mappers\\UserMapper.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACUAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T15:49:14.671Z",
+              "WhenOpened": "2025-10-04T07:13:29.215Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAYwHIAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T15:48:15.287Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "DataContext.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\DataContext.cs",
-              "RelativeDocumentMoniker": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\DataContext.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\DataContext.cs",
-              "RelativeToolTip": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\DataContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T15:46:09.258Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Repositories\\IUserRepository.cs",
               "RelativeDocumentMoniker": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Repositories\\IUserRepository.cs",
               "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Repositories\\IUserRepository.cs",
               "RelativeToolTip": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Repositories\\IUserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T15:45:36.629Z",
+              "WhenOpened": "2025-10-04T07:13:24.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-04T07:13:21.259Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Repositories\\IRepository.cs",
-              "RelativeDocumentMoniker": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Repositories\\IRepository.cs",
-              "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Repositories\\IRepository.cs",
-              "RelativeToolTip": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Repositories\\IRepository.cs",
+              "Title": "UserMapper.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Mappers\\UserMapper.cs",
+              "RelativeDocumentMoniker": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Mappers\\UserMapper.cs",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Mappers\\UserMapper.cs",
+              "RelativeToolTip": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Mappers\\UserMapper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-03T15:45:20.043Z",
+              "WhenOpened": "2025-10-04T07:13:17.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Configurations\\UserConfiguration.cs",
+              "RelativeDocumentMoniker": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Configurations\\UserConfiguration.cs",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Configurations\\UserConfiguration.cs",
+              "RelativeToolTip": "src\\HostMarket.Infrastructure\\Data\\EntityFramework\\Configurations\\UserConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-04T07:13:13.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserEntity.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\Entities\\UserEntity.cs",
+              "RelativeDocumentMoniker": "src\\HostMarket.Infrastructure\\Data\\Entities\\UserEntity.cs",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Infrastructure\\Data\\Entities\\UserEntity.cs",
+              "RelativeToolTip": "src\\HostMarket.Infrastructure\\Data\\Entities\\UserEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-04T07:13:09.281Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IAuthenticationService.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Core\\Services\\Interfaces\\IAuthenticationService.cs",
+              "RelativeDocumentMoniker": "src\\HostMarket.Core\\Services\\Interfaces\\IAuthenticationService.cs",
+              "ToolTip": "C:\\Users\\asus\\Desktop\\market\\digital-hosting-marketplace\\src\\HostMarket.Core\\Services\\Interfaces\\IAuthenticationService.cs",
+              "RelativeToolTip": "src\\HostMarket.Core\\Services\\Interfaces\\IAuthenticationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-04T07:13:02.777Z",
               "EditorCaption": ""
             }
           ]
