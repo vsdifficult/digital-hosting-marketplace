@@ -12,7 +12,10 @@ namespace HostMarket.Infrastructure.Data.DTO
         public Guid Id { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
+        public string Password { get; set; }
         public decimal Balance { get; set; }
+        public UserRole Role { get; set; }
+        public string Code { get; set; }
         public bool IsVerify { get; set; }
         public DateTime RegistrationDate { get; set; }
 

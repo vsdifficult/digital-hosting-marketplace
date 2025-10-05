@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore; 
 using HostMarket.Infrastructure.Data.Entities;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using HostMarket.Shared.Models;
 
 namespace HostMarket.Infrastructure.Data.EntityFramework.Configurations
 {
@@ -36,6 +37,9 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Configurations
 
             builder.Property(u => u.Balance)
                 .HasDefaultValue(0);
+
+            builder.Property(u => u.Role)
+                   .IsRequired();
 
             builder.Property(u => u.Code)
                 .HasMaxLength(5);
