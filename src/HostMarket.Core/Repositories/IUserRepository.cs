@@ -10,6 +10,7 @@ namespace HostMarket.Core.Repositories
 {
     public interface IUserRepository : IRepository<UserDTO, Guid>
     {
+        Task<Guid> AddAsync(UserDTO user);
         Task<bool> UpdatePasswordAsync(Guid userid, string new_password);
         Task<UserDTO?> GetByEmailAsync(string email);
         Task<UserDTO?> GetByUsernameAsync(string username);
