@@ -4,11 +4,6 @@ using HostMarket.Infrastructure.Data.Entities;
 using HostMarket.Infrastructure.Data.EntityFramework.Mappers;
 using HostMarket.Shared.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HostMarket.Infrastructure.Data.EntityFramework.Repositories
 {
@@ -24,27 +19,11 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Repositories
         {
             var userEntity = UserMapper.FromUserDTOToEntity(entity);
             userEntity.Id = Guid.NewGuid();
-            userEntity.Balance = 1000;
 
             await _context.Users.AddAsync(userEntity);
             await _context.SaveChangesAsync();
 
             return userEntity.Id;
-        }
-
-        public async Task<Guid> AddAsync(UserDTO user)
-        {
-            try
-            {
-                var entity = MapToEntity(user);
-                await _context.Users.AddAsync(entity);
-                await _context.SaveChangesAsync();
-                return entity.Id;
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
         }
 
         public async Task<bool> DeleteAsync(Guid id)

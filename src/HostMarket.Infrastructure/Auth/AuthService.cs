@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+
 using HostMarket.Core.Repositories;
 using HostMarket.Core.Services.Interfaces;
 using HostMarket.Infrastructure.Data.DTO;
@@ -11,9 +9,6 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
-using System.Data.Common;
-using System.Net.WebSockets;
 
 namespace HostMarket.Infrastructure.Auth;
 
@@ -100,7 +95,7 @@ public class AuthService : IAuthenticationService
             };
 
             // Add a user to the DB
-            await _userRepository.AddAsync(user);
+            await _userRepository.CreateAsync(user);
 
             // Genering jwt-token
             var token = await GenerateTokenAsync(userId);
@@ -132,7 +127,6 @@ public class AuthService : IAuthenticationService
     }
 
 
-
     // ----- Sup part -----
 
     // Generate jwt-token function
@@ -158,7 +152,7 @@ public class AuthService : IAuthenticationService
             Expires = DateTime.UtcNow.AddHours(24),
             SigningCredentials = new SigningCredentials(
                 new SymmetricSecurityKey(key),
-                SecurityAlgorithms.HmacSha256Signature)
+                Microsoft.IdentityModel.Tokens.SecurityAlgorithms.HmacSha256Signature)
         };
 
         // return token
@@ -167,31 +161,31 @@ public class AuthService : IAuthenticationService
     }
 
 
-    // Token validation
-    public Task<bool> ValidateTokenAsync(string token)
-    {
-        try
-        {
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_configuration.["AppSettings:JwtSecret"] ?? string.Empty);
+    // // Token validation
+    // public Task<bool> ValidateTokenAsync(string token)
+    // {
+    //     try
+    //     {
+    //         var tokenHandler = new JwtSecurityTokenHandler();
+    //         var key = Encoding.ASCII.GetBytes(_configuration.["AppSettings:JwtSecret"] ?? string.Empty);
 
-            tokenHandler.ValidateToken(token, new TokenValidationParameters
-            {
-                ValidateIssuerSigningKey = true,
-                IssuerSigningKey = new SymmetricSecurityKey(key),
-                ValidateIssuer = false,
-                ValidateAudience = false,
-                ValidateLifetime = true,
-                ClockSkew = TimeSpan.Zero
-            }, out _);
+    //         tokenHandler.ValidateToken(token, new TokenValidationParameters
+    //         {
+    //             ValidateIssuerSigningKey = true,
+    //             IssuerSigningKey = new SymmetricSecurityKey(key),
+    //             ValidateIssuer = false,
+    //             ValidateAudience = false,
+    //             ValidateLifetime = true,
+    //             ClockSkew = TimeSpan.Zero
+    //         }, out _);
 
-            return Task.FromResult(true);
-        }
+    //         return Task.FromResult(true);
+    //     }
 
-        catch
-        {
-            return Task.FromResult(false);
-        }
-    }
+    //     catch
+    //     {
+    //         return Task.FromResult(false);
+    //     }
+    // }
     
 }

@@ -22,4 +22,10 @@ namespace HostMarket.Infrastructure.Data.DTO
 
         public Status Status { get; set; }
     }
+
+    public record VerificationDto
+    {
+        public string Email { get; init; } 
+        public string Code { get; init; }
+    }
 }

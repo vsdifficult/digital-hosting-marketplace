@@ -19,15 +19,15 @@ public record AuthResult
     public int Code { get; init; }
     public UserRole? Role { get; init; }
 
+}
 
-    /// <summary>
-    /// Service for authentication operations
-    /// </summary>
-    public interface IAuthenticationService
-    {
-        Task<AuthResult> SignUpAsync(RegisterDto dto);
-        Task<AuthResult> SignInAsync(LoginDto dto);
-        Task<AuthResult> VerificationAsync(VerificationDto dto);
-        Task<AuthResult> DeleteAsync(Guid userid);
-    }
+/// <summary>
+/// Service for authentication operations
+/// </summary>
+public interface IAuthenticationService
+{
+    Task<AuthResult> SignUpAsync(UserRegisterDto dto);
+    Task<AuthResult> SignInAsync(UserLoginDTO dto);
+    Task<AuthResult> VerificationAsync(VerificationDto dto);
+    Task<AuthResult> DeleteAsync(Guid userid);
 }
