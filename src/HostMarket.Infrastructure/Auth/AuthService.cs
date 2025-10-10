@@ -31,11 +31,10 @@ public class AuthService : IAuthenticationService
     {
         try
         {
-            var users = await _userRepository.GetAllAsync();   // Get All users from DB
-            var user = users.FirstOrDefault(u => u.Email == loginDTO.Email);
+            var user = await _userRepository.GetByEmailAsync(loginDTO.Email);
 
-            // null result checking
-            if (user == null)
+            // if the user is not found or the password is incorrect
+            if (user == null || !BCrypt.Net.BCrypt.Verify(loginDTO.Password, user.Password))
             {
                 return new AuthResult
                 {
@@ -45,7 +44,7 @@ public class AuthService : IAuthenticationService
             }
 
             // Genering jwt-token 
-            var token = GenerateTokenAsync(user.Id);
+            var token = await GenerateTokenAsync(user.Id);
 
             // return the report
             return new AuthResult
@@ -72,11 +71,8 @@ public class AuthService : IAuthenticationService
     {
         try
         {
-            // Get all users 
-            var users = await _userRepository.GetAllAsync();
-
             // if user exist checking
-            if (users.Any(u => u.Email == registerDto.Email))
+            if (await _userRepository.IsUserExistsByEmailAsync(registerDto.Email))
             {
                 return new AuthResult
                 {
@@ -85,13 +81,22 @@ public class AuthService : IAuthenticationService
                 };
             }
 
+            // installing the verification code
+            var verificationCode = new Random().Next(10000, 999999).ToString();
+            await _userRepository.SetVerificationCodeAsync(registerDto.Email, verificationCode);
+
+            // password hashing
+            var passwordHash = BCrypt.Net.BCrypt.HashPassword(registerDto.Password);
+
             // Creating new userDto
             var userId = Guid.NewGuid();
             var user = new UserDTO
             {
                 Id = userId,
                 UserName = registerDto.Username,
-                Email = registerDto.Email
+                Email = registerDto.Email,
+                Password = passwordHash,
+                Code = verificationCode
             };
 
             // Add a user to the DB
@@ -160,6 +165,48 @@ public class AuthService : IAuthenticationService
         return tokenHandler.WriteToken(token);
     }
 
+    public async Task<AuthResult> VerificationAsync(VerificationDto verificationDto)
+    {
+        try
+        {
+            var user = await _userRepository.GetByEmailAsync(verificationDto.Email);
+            if (user == null)
+            {
+                return new AuthResult 
+                { 
+                    Success = false, 
+                    ErrorMessage = "User not found" 
+                };
+            }
+            if (user.Code != verificationDto.Code)
+            {
+                return new AuthResult
+                {
+                    Success = false,
+                    ErrorMessage = "Invalid verification code"
+                };
+            }
+            await _userRepository.SetEmailVerifiedAsync(verificationDto.Email);
+
+            return new AuthResult { Success = true };
+        }
+        catch (Exception ex)
+        {
+            return new AuthResult 
+            { 
+                Success = false, 
+                ErrorMessage = "An error occurred during verification" 
+            };
+        }
+
+    }
+
+    public async Task<AuthResult> DeleteAsync(Guid userid)
+    {
+        var result = await _userRepository.DeleteAsync(userid);
+        return new AuthResult { Success = result };
+    }
+
 
     // // Token validation
     // public Task<bool> ValidateTokenAsync(string token)
@@ -187,5 +234,5 @@ public class AuthService : IAuthenticationService
     //         return Task.FromResult(false);
     //     }
     // }
-    
+
 }

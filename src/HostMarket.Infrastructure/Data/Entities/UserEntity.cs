@@ -1,5 +1,7 @@
 ﻿
 
+using HostMarket.Shared.Models;
+
 namespace HostMarket.Infrastructure.Data.Entities
 {
     public class UserEntity : BaseEntity
@@ -7,6 +9,7 @@ namespace HostMarket.Infrastructure.Data.Entities
         public string UserName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public UserRole Role { get; set; }
         public decimal Balance { get; set; }
         public string Code { get; set; } 
         public bool IsVerify { get; set; }
