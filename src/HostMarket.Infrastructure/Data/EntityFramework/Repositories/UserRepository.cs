@@ -1,5 +1,5 @@
 using HostMarket.Core.Repositories;
-using HostMarket.Infrastructure.Data.DTO;
+using HostMarket.Shared.Dto;
 using HostMarket.Infrastructure.Data.Entities;
 using HostMarket.Infrastructure.Data.EntityFramework.Mappers;
 using HostMarket.Shared.Models;
