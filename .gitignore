@@ -4,13 +4,34 @@ __pycache__/
 *$py.class
 .vs/
 # C extensions
-*.so
-**/obj/
-**/bin/
-*.user
-*.cache
-*.nuget.*
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# NuGet
+**/*.nuget.targets
+**/*.nuget.props
+.nuget/
+nuget.exe
+*.nupkg
+**/packages/
+
+# File specific
 project.assets.json
+*.csproj.nuget.*
+*.assets.cache
 
 # Distribution / packaging
 .Python

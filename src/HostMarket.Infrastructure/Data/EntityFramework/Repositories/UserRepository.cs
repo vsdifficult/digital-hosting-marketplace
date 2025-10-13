@@ -1,21 +1,17 @@
-﻿using HostMarket.Core.Repositories;
-using HostMarket.Infrastructure.Data.DTO;
+using HostMarket.Core.Repositories;
+using HostMarket.Shared.Dto;
+using HostMarket.Infrastructure.Data.Entities;
 using HostMarket.Infrastructure.Data.EntityFramework.Mappers;
 using HostMarket.Shared.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HostMarket.Infrastructure.Data.EntityFramework.Repositories
 {
     public class UserRepository : IUserRepository
     {
         private readonly DataContext _context;
-        public UserRepository(DataContext context) 
-        { 
+        public UserRepository(DataContext context)
+        {
             _context = context;
         }
 
@@ -23,14 +19,12 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Repositories
         {
             var userEntity = UserMapper.FromUserDTOToEntity(entity);
             userEntity.Id = Guid.NewGuid();
-            userEntity.Balance = 1000;
 
             await _context.Users.AddAsync(userEntity);
             await _context.SaveChangesAsync();
 
             return userEntity.Id;
         }
-
 
         public async Task<bool> DeleteAsync(Guid id)
         {
@@ -54,7 +48,7 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Repositories
             return user == null ? null : UserMapper.FromEntityToDto(user);
         }
 
-        public async  Task<UserDTO?> GetByIdAsync(Guid id)
+        public async Task<UserDTO?> GetByIdAsync(Guid id)
         {
             var user = await _context.Users.FindAsync(id);
             return user == null ? null : UserMapper.FromEntityToDto(user);
@@ -62,7 +56,7 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Repositories
 
         public async Task<UserDTO?> GetByUsernameAsync(string username)
         {
-           var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName == username);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.UserName == username);
             return user == null ? null : UserMapper.FromEntityToDto(user);
         }
 
@@ -139,5 +133,35 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Repositories
 
             return await _context.SaveChangesAsync() > 0;
         }
+
+        // Доделать маперы
+        private UserDTO MapToDto(UserEntity entity)
+        {
+            return new UserDTO
+            {
+                Id = entity.Id,
+                Email = entity.Email,
+                UserName = entity.UserName,
+                Password = entity.Password,
+                Balance = entity.Balance,
+                IsVerify = entity.IsVerify,
+                RegistrationDate = entity.RegistrationDate
+            };
+        }
+
+        private UserEntity MapToEntity(UserDTO dto)
+        {
+            return new UserEntity
+            {
+                Id = dto.Id,
+                Email = dto.Email,
+                UserName = dto.UserName,
+                Password = dto.Password,
+                Balance = dto.Balance,
+                IsVerify = dto.IsVerify,
+                RegistrationDate = dto.RegistrationDate
+            };
+        }
+        
     }
 }

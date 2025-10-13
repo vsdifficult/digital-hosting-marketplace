@@ -1,4 +1,4 @@
-﻿using HostMarket.Infrastructure.Data.DTO;
+using HostMarket.Shared.Dto;
 using HostMarket.Infrastructure.Data.Entities;
 using System;
 using System.Collections.Generic;
@@ -49,4 +49,3 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Mappers
         }
     }
 }
-

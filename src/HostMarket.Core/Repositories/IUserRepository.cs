@@ -1,4 +1,4 @@
-﻿using HostMarket.Infrastructure.Data.DTO;
+using HostMarket.Shared.Dto;
 using HostMarket.Shared.Models;
 using System;
 using System.Collections.Generic;
