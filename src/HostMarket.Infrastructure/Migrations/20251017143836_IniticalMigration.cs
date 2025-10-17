@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HostMarket.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class IniticalCreate : Migration
+    public partial class IniticalMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

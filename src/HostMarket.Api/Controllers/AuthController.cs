@@ -2,7 +2,6 @@
 using HostMarket.Core.Services.Interfaces;
 using HostMarket.Shared.Dto;
 namespace HostMarket.Api.Controllers
-
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -81,7 +81,7 @@ public class AuthService : IAuthenticationService
             }
 
             // installing the verification code
-            var verificationCode = new Random().Next(10000, 999999).ToString();
+            var verificationCode = new Random().Next(10000, 99999).ToString();
             await _userRepository.SetVerificationCodeAsync(registerDto.Email, verificationCode);
 
             // password hashing
