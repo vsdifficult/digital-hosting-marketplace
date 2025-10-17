@@ -19,7 +19,7 @@ namespace HostMarket.Infrastructure.Data.EntityFramework
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.HasDefaultSchema("DatabaseSchema");
+            modelBuilder.HasDefaultSchema("hostmarket");
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new ServerConfiguration());
             modelBuilder.ApplyConfiguration(new TransactionConfiguration());

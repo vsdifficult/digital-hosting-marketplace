@@ -14,7 +14,6 @@ namespace HostMarket.Infrastructure.Auth;
 
 public class AuthService : IAuthenticationService
 {
-    // Creating and defining private fields in the constructor
     private readonly IUserRepository _userRepository;
     private readonly IConfiguration _configuration;
 
