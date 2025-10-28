@@ -20,6 +20,7 @@ public enum Status
 public enum UserRole
 {
     Admin,
-    User
+    User,
+    ServerManager
 }
 
