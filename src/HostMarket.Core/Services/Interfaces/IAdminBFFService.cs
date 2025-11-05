@@ -13,7 +13,7 @@ namespace HostMarket.Core.Services.Interfaces;
 public interface IAdminBFFService
 {
     // Just creating a seerver
-    Task<Guid> CreateServerAsync();
+    Task<Guid?> CreateServerAsync();
     Task<IEnumerable<ServerDTO>> GetServersIdAsync();
     Task<bool> UpdateServerInfoAsync(Guid serverID);
     Task<bool> DeleteServerAsync(Guid serverId);
