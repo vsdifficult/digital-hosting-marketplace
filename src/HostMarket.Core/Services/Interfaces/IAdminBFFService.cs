@@ -14,7 +14,7 @@ public interface IAdminBFFService
 {
     // Just creating a seerver
     Task<Guid?> CreateServerAsync();
-    Task<IEnumerable<ServerDTO>> GetServersIdAsync();
+    Task<IEnumerable<ServerDTO>> GetAllServersAsync();
     Task<bool> UpdateServerInfoAsync(Guid serverID);
     Task<bool> DeleteServerAsync(Guid serverId);
 }

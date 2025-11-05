@@ -4,7 +4,7 @@ namespace HostMarket.Infrastructure.Data.Entities
 {
     public class ServerEntity : BaseEntity
     {
-        public Guid ownerId { get; set; }
+        public Guid? ownerId { get; set; }
         public string ServerName { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
