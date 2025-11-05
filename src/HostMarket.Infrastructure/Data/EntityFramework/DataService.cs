@@ -16,9 +16,12 @@ public class DataService: IDataService
 
         Users = new UserRepository(_context);
         Servers = new ServerRepository(_context); 
+        Transactions = new TransactionRepository(_context);
     } 
     
     public IUserRepository Users { get; }
 
     public IServerRepository Servers { get; }
+
+    public ITransactionRepository Transactions { get; }
 }

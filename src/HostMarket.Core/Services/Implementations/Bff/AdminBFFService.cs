@@ -39,7 +39,7 @@ public class AdminBFFService : IAdminBFFService
     }
 
     // Get Servers ID function
-    public async Task<IEnumerable<ServerDTO>> GetServersIdAsync()
+    public async Task<IEnumerable<ServerDTO>> GetAllServersAsync()
     {
         // getting the server dto
         var servers = await _dataService.Servers.GetAllAsync();
