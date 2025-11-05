@@ -10,11 +10,11 @@ namespace HostMarket.Core.Services.Implementations.Bff;
 
 public class AdminBFFService : IAdminBFFService
 {
-    private readonly IServerRepository _serverRepository;
+    private readonly IDataService _dataService; 
 
-    public AdminBFFService(IServerRepository serverRepository)
+    public AdminBFFService(IDataService dataService)
     {
-        _serverRepository = serverRepository;
+        _dataService = dataService; 
     }
 
     // Creating Server function
@@ -42,7 +42,7 @@ public class AdminBFFService : IAdminBFFService
     public async Task<IEnumerable<ServerDTO>> GetServersIdAsync()
     {
         // getting the server dto
-        var servers = await _serverRepository.GetAllAsync();
+        var servers = await _dataService.Servers.GetAllAsync();
         // return list of servers
         return servers;
     }
@@ -51,12 +51,12 @@ public class AdminBFFService : IAdminBFFService
     public async Task<bool> UpdateServerInfoAsync(Guid serverId)
     {
         // try to get serverDto
-        var serverDto = await _serverRepository.GetByIdAsync(serverId);
+        var serverDto = await _dataService.Servers.GetByIdAsync(serverId);
 
         if (serverDto != null)
         {
             // updating server info 
-            await _serverRepository.UpdateAsync(serverDto);
+            await _dataService.Servers.UpdateAsync(serverDto);
             return true;
         }
         else
@@ -71,7 +71,7 @@ public class AdminBFFService : IAdminBFFService
     {
         try
         {
-            await _serverRepository.DeleteAsync(serverId);
+            await _dataService.Servers.DeleteAsync(serverId);
             return true;
         }
 
