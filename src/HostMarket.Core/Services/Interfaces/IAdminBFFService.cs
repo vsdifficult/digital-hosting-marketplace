@@ -17,4 +17,5 @@ public interface IAdminBFFService
     Task<IEnumerable<ServerDTO>> GetAllServersAsync();
     Task<bool> UpdateServerInfoAsync(Guid serverID);
     Task<bool> DeleteServerAsync(Guid serverId);
+    Task<ServerStatus> GetServerStatusAsync(Guid serverId);
 }
