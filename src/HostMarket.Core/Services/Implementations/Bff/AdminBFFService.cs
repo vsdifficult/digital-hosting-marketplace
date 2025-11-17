@@ -5,6 +5,7 @@ using HostMarket.Infrastructure.Data.DTO;
 using HostMarket.Shared.Models;
 using HostMarket.Core.Repositories;
 using System.Data.Common;
+using System.Net.NetworkInformation;
 
 namespace HostMarket.Core.Services.Implementations.Bff;
 
@@ -89,6 +90,22 @@ public class AdminBFFService : IAdminBFFService
         // if the server was found, we return the status
         if (server != null)
             return server.ServStatus;
+    }
+    
+    // Ping Server
+    public async Task<bool> HealthCheckByPingAsync(Guid serverId)
+    {
+        var server = await _dataService.Servers.GetByIdAsync(serverId);
+        var server_address = server.Address;
+
+        // if the server was found, we return the status
+        if (server != null)
+        {
+            Ping ping = new Ping();
+            PingReply pingReply = ping.Send(server_address, 1000);  // Time-out for a 1000 second
+            return pingReply.Status == IPStatus.Success; 
+        }
+
     }
 
 }
