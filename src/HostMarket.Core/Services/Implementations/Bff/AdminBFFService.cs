@@ -10,32 +10,35 @@ namespace HostMarket.Core.Services.Implementations.Bff;
 
 public class AdminBFFService : IAdminBFFService
 {
-    private readonly IDataService _dataService; 
+    private readonly IDataService _dataService;
 
     public AdminBFFService(IDataService dataService)
     {
-        _dataService = dataService; 
+        _dataService = dataService;
     }
 
     // Creating Server function
-    public async Task<Guid?> CreateServerAsync()
+    public async Task<Guid?> CreateServerAsync(CreateServerDTO createDTO)
     {
         // Creating a new ServerDto
         var serverId = Guid.NewGuid();
         var server = new ServerDTO
         {
             Id = serverId,
-            ServerName = "Server №" + Convert.ToString(serverId),
-            Description = string.Empty,
-            Price = 0,      // ♦ update
+            //ServerName = "Server №" + Convert.ToString(serverId),
+            ServerName = createDTO.ServerName,
+            //Description = string.Empty,
+            Description = createDTO.Description,
+            //Price = 0,      // ♦ update
+            Price = createDTO.Price,
             ServStatus = ServerStatus.Available,
             CreateAt = DateTime.Now,
             UpdateAt = DateTime.Now,
             Status = Status.Active
         };
-        await _dataService.Servers.CreateAsync(server); 
         // return serverId
-        return serverId;
+        return await _dataService.Servers.CreateAsync(server);
+        
     }
 
     // Get Servers ID function
@@ -82,13 +85,13 @@ public class AdminBFFService : IAdminBFFService
     }
 
     // Check: server state
-    public async Task<ServerStatus> GetServerStatusAsync(Guid serverId)
+    public async Task<ServerStatus?> GetServerStatusAsync(Guid serverId)
     {
         var server = await _dataService.Servers.GetByIdAsync(serverId);
 
         // if the server was found, we return the status
-        if (server != null)
-            return server.ServStatus;
-    }
+        if (server == null) return null;
 
+        return server.ServStatus;
+    }
 }

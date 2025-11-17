@@ -13,9 +13,9 @@ namespace HostMarket.Core.Services.Interfaces;
 public interface IAdminBFFService
 {
     // Just creating a seerver
-    Task<Guid?> CreateServerAsync();
+    Task<Guid?> CreateServerAsync(CreateServerDTO serverDTO);
     Task<IEnumerable<ServerDTO>> GetAllServersAsync();
     Task<bool> UpdateServerInfoAsync(Guid serverID);
     Task<bool> DeleteServerAsync(Guid serverId);
-    Task<ServerStatus> GetServerStatusAsync(Guid serverId);
+    Task<ServerStatus?> GetServerStatusAsync(Guid serverId);
 }
