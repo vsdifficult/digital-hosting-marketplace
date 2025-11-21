@@ -1,6 +1,8 @@
 ﻿using HostMarket.Core.Services.Interfaces;
 using HostMarket.Infrastructure.Data.DTO;
+using HostMarket.Shared.DTO;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.OpenApi.Writers;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -15,7 +17,7 @@ namespace HostMarket.Api.Controllers
         {
             _adminBFFService = adminBFFService;
         }
-        [HttpPost("create")]
+        [HttpPost("createServer")]
         public async Task<IActionResult> EndpointCreateServerAsync(CreateServerDTO createDTO) 
         {
             try
@@ -43,7 +45,7 @@ namespace HostMarket.Api.Controllers
             }
         }
 
-        [HttpDelete("delete")]
+        [HttpDelete("deleteServer")]
         public async Task<IActionResult> EndpointDeleteServerAsync(Guid id)
         {
             try
@@ -55,7 +57,87 @@ namespace HostMarket.Api.Controllers
             {
                 return BadRequest(ex.Message);
             }
+        }
+        [HttpPut("updateServer")]
+        public async Task<IActionResult> EndpointUpdateServerAsync(Guid id)
+        {
+            try
+            {
+                if (await _adminBFFService.UpdateServerInfoAsync(id)) return Ok(true);
+                return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet("getServerStatus")]
+        public async Task<IActionResult> EndpointGetServerStatusAsync(Guid id)
+        {
+            try
+            {
+                return Ok(await _adminBFFService.GetServerStatusAsync(id));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
+
+        //actions with the tariff
+
+        [HttpPost("createTariff")]
+        public async Task<IActionResult> EndpointCreateTariffASync(CreateTariffDto createTariffDto)
+        {
+            try
+            {
+                var tariff = await _adminBFFService.CreateTariffAsync(createTariffDto);
+                return Ok(tariff);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet("getAllTariffs")]
+        public async Task<IActionResult> EndpointGetAllTariffsAsync()
+        {
+            try
+            {
+                var tariffs = await _adminBFFService.GetAllTariffsAsync();
+                return Ok(tariffs);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpDelete("deleteTariff")]
+        public async Task<IActionResult> EndpointDeleteTariffAsync(Guid id)
+        {
+            try
+            {
+                if (await _adminBFFService.DeleteTariffAsync(id)) return Ok(true);
+                return BadRequest(false);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpPut("updateTariff")]
+        public async Task<IActionResult> EndpointUpdateTariffAsync(Guid id)
+        {
+            try
+            {
+                if (await _adminBFFService.UpdateTariffAsync(id)) return Ok(true);
+                return BadRequest(false);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

@@ -16,6 +16,7 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Mappers
             {
                 Id = entity.Id,
                 ownerId = entity.ownerId,
+                TariffId = entity.TariffId,
                 ServerName = entity.ServerName,
                 Description = entity.Description,
                 Price = entity.Price,
@@ -32,6 +33,7 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Mappers
             {
                 Id = dto.Id,
                 ownerId = dto.ownerId,
+                TariffId = dto.TariffId,
                 ServerName = dto.ServerName,
                 Description = dto.Description,
                 Price = dto.Price,
@@ -45,6 +47,7 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Mappers
         public static void Update(ServerEntity entity, ServerDTO dto)
         {
             entity.ownerId = dto.ownerId;
+            entity.TariffId = dto.TariffId;
             entity.ServerName = dto.ServerName;
             entity.Description = dto.Description;
             entity.Price = dto.Price;

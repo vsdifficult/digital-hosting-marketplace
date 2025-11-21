@@ -11,7 +11,6 @@ namespace HostMarket.Core.Services.Interfaces
 {
     public interface IServerBFFService
     {
-        Task<ServerDTO> RentServerAsync (Guid ownerId);
-        Task<TransactionDto> MakeTransactionAsync(Guid ownerId, decimal price);
+       
     }
 }
