@@ -88,13 +88,15 @@ public class AdminBFFService : IAdminBFFService
     }
 
     // Check: server state
-    public async Task<ServerStatus> GetServerStatusAsync(Guid serverId)
+    public async Task<ServerStatus?> GetServerStatusAsync(Guid serverId)
     {
         var server = await _dataService.Servers.GetByIdAsync(serverId);
 
         // if the server was found, we return the status
         if (server != null)
-            return server.ServStatus;
+            return server.ServStatus; 
+
+        return null; 
     }
 
 }
