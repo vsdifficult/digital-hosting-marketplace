@@ -18,7 +18,7 @@ public class AdminBFFService : IAdminBFFService
     }
 
     // Creating Server function
-    public async Task<Guid?> CreateServerAsync()
+    public async Task<AdminResult> CreateServerAsync()
     {
         // Creating a new ServerDto
         var serverId = Guid.NewGuid();
@@ -33,9 +33,15 @@ public class AdminBFFService : IAdminBFFService
             UpdateAt = DateTime.Now,
             Status = Status.Active
         };
-        await _dataService.Servers.CreateAsync(server); 
-        // return serverId
-        return serverId;
+        await _dataService.Servers.CreateAsync(server);  
+        var dict = new Dictionary<string, string>(); 
+        dict.Add("IP", "1111"); 
+
+        return new AdminResult
+        {
+            Success = true,
+            Data = dict
+        }; 
     }
 
     // Get Servers ID function
