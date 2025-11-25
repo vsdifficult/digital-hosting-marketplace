@@ -13,14 +13,26 @@ namespace HostMarket.Core.Services.Interfaces;
 
 public interface IAdminBFFService
 {
+    public record ServerResult
+    {
+        public string Ip { get; init; }
+        public int Port { get; init; }
+    }
+    public record AdminResult
+    {
+        public bool Success { get; init; }
+        public string? Message { get; init; }
+
+        public Dictionary<string, string>? Data { get; init; }
+    }
     // Just creating a seerver
-    Task<Guid?> CreateServerAsync(CreateServerDTO serverDTO);
+    Task<AdminResult> CreateServerAsync(CreateServerDTO serverDTO);
     Task<IEnumerable<ServerDTO>> GetAllServersAsync();
     Task<bool> UpdateServerInfoAsync(Guid serverID);
     Task<bool> DeleteServerAsync(Guid serverId);
     Task<ServerStatus?> GetServerStatusAsync(Guid serverId);
-    Task<Guid?> CreateTariffAsync(CreateTariffDto createTariffDto);
-    Task<bool> UpdateTariffAsync(Guid tariffId);
-    Task<bool> DeleteTariffAsync(Guid tariffId);
+    Task<AdminResult> CreateTariffAsync(CreateTariffDto createTariffDto);
+    Task<AdminResult> UpdateTariffAsync(Guid tariffId);
+    Task<AdminResult> DeleteTariffAsync(Guid tariffId);
     Task<IEnumerable<TariffDto>> GetAllTariffsAsync();
 }

@@ -7,6 +7,7 @@ using HostMarket.Shared.DTO;
 using HostMarket.Shared.Models;
 using System;
 using System.Data.Common;
+using static HostMarket.Core.Services.Interfaces.IAdminBFFService;
 
 namespace HostMarket.Core.Services.Implementations.Bff;
 
@@ -20,10 +21,10 @@ public class AdminBFFService : IAdminBFFService
     }
 
     // Creating Server function
-    public async Task<Guid?> CreateServerAsync(CreateServerDTO createDTO)
+    public async Task<AdminResult> CreateServerAsync(CreateServerDTO createDTO)
     {
         // Creating a new ServerDto
-        var selectedTariff = await _dataService.Tariffs.GetByIdAsync(createDTO.TariffId) ?? throw new Exception("Тариф не найден");
+        var selectedTariff = await _dataService.Tariffs.GetByIdAsync(createDTO.TariffId) ?? throw new Exception("The tariff was not found.");
         var serverId = Guid.NewGuid();
         var server = new ServerDTO
         {
@@ -37,9 +38,17 @@ public class AdminBFFService : IAdminBFFService
             UpdateAt = DateTime.Now,
             Status = Status.Active
         };
-        // return serverId
-        return await _dataService.Servers.CreateAsync(server);
-        
+        await _dataService.Servers.CreateAsync(server);
+
+        var dict = new Dictionary<string, string>();
+        dict.Add("IP", "1111");
+
+        return new AdminResult
+        {
+            Success = true,
+            Data = dict
+        };
+
     }
 
     // Get Servers ID function
@@ -100,7 +109,7 @@ public class AdminBFFService : IAdminBFFService
 
     //actions with the tariff
 
-    public async Task<Guid?> CreateTariffAsync(CreateTariffDto createTariffDto)
+    public async Task<AdminResult> CreateTariffAsync(CreateTariffDto createTariffDto)
     {
         var tariff = new TariffDto
         {
@@ -114,28 +123,30 @@ public class AdminBFFService : IAdminBFFService
             UpdateAt = DateTime.UtcNow
         };
 
-        return await _dataService.Tariffs.CreateAsync(tariff);
+        await _dataService.Tariffs.CreateAsync(tariff);
+        return new AdminResult { Success = true, Message = "The tariff has been created." };
     }
 
-    public async Task<bool> UpdateTariffAsync(Guid tariffId)
+    public async Task<AdminResult> UpdateTariffAsync(Guid tariffId)
     {
         var tariff = await _dataService.Tariffs.GetByIdAsync(tariffId);
-        if (tariff == null) return false;   
+        if (tariff == null)
+            return new AdminResult { Success = false, Message = "The tariff was not found." };
 
         await _dataService.Tariffs.UpdateAsync(tariff);
-        return true;
+        return new AdminResult { Success = true, Message = "The tariff has been updated." };
     }
 
-    public async Task<bool> DeleteTariffAsync(Guid tariffId)
+    public async Task<AdminResult> DeleteTariffAsync(Guid tariffId)
     {
         try
         {
-            await _dataService.Tariffs.DeleteAsync(tariffId);
-            return true;
+            var result = await _dataService.Tariffs.DeleteAsync(tariffId);
+            return new AdminResult { Success = result, Message = "The tariff has been deleted." };
         }
         catch
         {
-            return false;
+            return new AdminResult { Success = false, Message = "Error. The tariff was not deleted." };
         }
     }
 
