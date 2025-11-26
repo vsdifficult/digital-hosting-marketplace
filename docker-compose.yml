@@ -13,7 +13,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT:-Development}
       - ASPNETCORE_URLS=http://+:80
       - AppDb__Type=${APP_DB_TYPE:-Postgres}
-      - AppDb__JwtSecret=${APP_JWT_SECRET}
+      - AppDb__JwtSecret=${APP_JWT_SECRET:-super-secret-key-for-development}
       - AppDb__TokenExpirationMinutes=${APP_TOKEN_EXPIRATION:-525600}
       - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=${POSTGRES_DB:-hostmarket};Username=${POSTGRES_USER:-postgres};Password=${POSTGRES_PASSWORD:-postgres};Maximum Pool Size=50;Connection Idle Lifetime=60;
       - FiatTransaction__PendingTresholdMinutes=20
