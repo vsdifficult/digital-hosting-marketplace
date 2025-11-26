@@ -11,6 +11,7 @@ public record TransactionDto
     public DateTime transactionDate { get; init; }
     public DateTime CreateAt { get; set; }
     public DateTime UpdateAt { get; set; }
+    public TransactionStatus transactionStatus { get; set; }
 
     public Status Status { get; set; }
 }
