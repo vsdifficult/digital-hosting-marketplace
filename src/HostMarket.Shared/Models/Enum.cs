@@ -23,4 +23,11 @@ public enum UserRole
     User,
     ServerManager
 }
+public enum TransactionStatus
+{
+    Finished,
+    Error,
+    Pending,
+    Denied
+}
 

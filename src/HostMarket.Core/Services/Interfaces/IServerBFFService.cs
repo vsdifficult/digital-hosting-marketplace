@@ -12,6 +12,8 @@ namespace HostMarket.Core.Services.Interfaces
 {
     public interface IServerBFFService
     {
-       Task<ServerResult> ServerRentalAsync(Guid userId, Guid serverId);
+        Task<ServerResult> ServerRentalAsync(Guid userId, Guid serverId);
+        Task<Guid> MakeTransactionAsync(Guid userId, decimal amount, Guid serverId);
+        Task<AdminResult> ConfirmTransactionAsync(Guid transactionId);
     }
 }
