@@ -8,6 +8,7 @@ namespace HostMarket.Infrastructure.Data.DTO
 {
     public class CreateServerDTO
     {
+        public Guid TariffId { get; set; }
         public string ServerName { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }

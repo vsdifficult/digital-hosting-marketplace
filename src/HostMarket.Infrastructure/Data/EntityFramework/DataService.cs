@@ -17,6 +17,7 @@ public class DataService: IDataService
         Users = new UserRepository(_context);
         Servers = new ServerRepository(_context); 
         Transactions = new TransactionRepository(_context);
+        Tariffs = new TariffRepository(_context);
     } 
     
     public IUserRepository Users { get; }
@@ -24,4 +25,5 @@ public class DataService: IDataService
     public IServerRepository Servers { get; }
 
     public ITransactionRepository Transactions { get; }
+    public ITariffRepository Tariffs { get; }
 }

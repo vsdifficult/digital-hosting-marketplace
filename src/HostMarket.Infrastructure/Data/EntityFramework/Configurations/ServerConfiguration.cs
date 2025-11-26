@@ -15,6 +15,9 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Configurations
             builder.Property(s => s.ownerId)
                 .IsRequired();
 
+            builder.Property(s => s.TariffId)
+                .IsRequired();
+
             builder.Property(s => s.CreateAt)
                 .IsRequired();
 
@@ -39,6 +42,10 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Configurations
                 .IsRequired();
 
             builder.HasOne(s => s.User)
+                .WithMany(u => u.Servers)
+                .IsRequired();
+
+            builder.HasOne(s => s.Tariff)
                 .WithMany(u => u.Servers)
                 .IsRequired();
         }

@@ -15,6 +15,7 @@ namespace HostMarket.Infrastructure.Data.EntityFramework
         public DbSet<UserEntity> Users { get; set; } = null!;
         public DbSet<ServerEntity> Servers { get; set; } = null!;
         public DbSet<TransactionEntity> Transactions { get; set; } = null!;
+        public DbSet<TariffEntity> Tariffs { get; set; } = null!;
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -23,6 +24,7 @@ namespace HostMarket.Infrastructure.Data.EntityFramework
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new ServerConfiguration());
             modelBuilder.ApplyConfiguration(new TransactionConfiguration());
+            modelBuilder.ApplyConfiguration(new TariffConfiguartion());
 
         }
     }

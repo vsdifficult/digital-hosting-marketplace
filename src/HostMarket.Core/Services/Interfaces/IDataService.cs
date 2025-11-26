@@ -7,4 +7,5 @@ public interface IDataService
     IUserRepository Users { get; }  
     IServerRepository Servers { get; }
     ITransactionRepository Transactions { get; }
+    ITariffRepository Tariffs { get; }
 }
