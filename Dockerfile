@@ -1,12 +1,12 @@
 #Stage 1: Build
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
 # Copy all .csproj files and restore as distinct layers
-COPY ["src/HostingMarket.Api/HostingMarket.Api.csproj", "src/HostingMarket.Api/"]
-COPY ["src/HostingMarket.Application/HostingMarket.Application.csproj", "src/HostingMarket.Application/"]
-COPY ["src/HostingMarket.Domain/HostingMarket.Domain.csproj", "src/HostingMarket.Domain/"]
-COPY ["src/HostingMarket.Infrastructure/HostingMarket.Infrastructure.csproj", "src/HostingMarket.Infrastructure/"]
+COPY ["src/HostMarket.Api/HostMarket.Api.csproj", "src/HostMarket.Api/"]
+COPY ["src/HostMarket.Core/HostMarket.Core.csproj", "src/HostMarket.Core/"]
+COPY ["src/HostMarket.Infrastructure/HostMarket.Infrastructure.csproj", "src/HostMarket.Infrastructure/"]
+COPY ["src/HostMarket.Shared/HostMarket.Shared.csproj", "src/HostMarket.Shared/"]
 
 # Copy solution file
 COPY ["HostingMarket.sln", "."]
@@ -15,14 +15,14 @@ RUN dotnet restore "HostingMarket.sln"
 
 # Copy the rest of the source code
 COPY . .
-WORKDIR "/src/src/HostingMarket.Api"
-RUN dotnet build "HostingMarket.Api.csproj" -c Release -o /app/build
+WORKDIR "/src/src/HostMarket.Api"
+RUN dotnet build "HostMarket.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "HostingMarket.Api.csproj" -c Release -o /app/publish
+RUN dotnet publish "HostMarket.Api.csproj" -c Release -o /app/publish
 
 #Stage 2: Runtime
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "HostingMarket.Api.dll"]
+ENTRYPOINT ["dotnet", "HostMarket.Api.dll"]
