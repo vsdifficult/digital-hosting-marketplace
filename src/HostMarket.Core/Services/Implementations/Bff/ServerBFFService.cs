@@ -84,6 +84,9 @@ public class ServerBFFService : IServerBFFService
 
             var transactionId = await MakeTransactionAsync(userId, server.Price, serverId);
             
+            var ifConfirm = ConfirmTransactionAsync(transactionId);
+
+
             return new ServerResult 
             {
                 Ip = "ip",
@@ -102,7 +105,8 @@ public class ServerBFFService : IServerBFFService
         {
             userId = userId,
             serverId = serverId,
-            Amount = amount
+            Amount = amount,
+            transactionStatus = TransactionStatus.Pending
         };
         return await _dataService.Transactions.CreateAsync(dto);
     }

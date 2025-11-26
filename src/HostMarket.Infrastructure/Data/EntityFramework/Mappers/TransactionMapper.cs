@@ -21,7 +21,8 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Mappers
                 transactionDate = entity.transactionDate,
                 CreateAt = entity.CreateAt,
                 UpdateAt = entity.UpdateAt,
-                Status = entity.Status
+                Status = entity.Status,
+                transactionStatus = entity.transactionStatus
             };
         }
         public static TransactionEntity FromDtoToEnity(TransactionDto dto)
@@ -35,8 +36,8 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Mappers
                 transactionDate = dto.transactionDate,
                 CreateAt = dto.CreateAt,
                 UpdateAt = dto.UpdateAt,
-                Status = dto.Status
-
+                Status = dto.Status,
+                transactionStatus = dto.transactionStatus
             };
         }
         public static void Update(TransactionEntity entity, TransactionDto dto)
@@ -47,6 +48,7 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Mappers
             entity.transactionDate = dto.transactionDate;
             entity.UpdateAt = DateTime.UtcNow;
             entity.Status = dto.Status;
+            entity.transactionStatus = dto.transactionStatus;
         }
     }
 }
