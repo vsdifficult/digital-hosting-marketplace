@@ -1,4 +1,6 @@
 
+using HostMarket.Shared.Models;
+
 namespace HostMarket.Infrastructure.Data.Entities;
 
 public class TransactionEntity : BaseEntity
@@ -9,9 +11,10 @@ public class TransactionEntity : BaseEntity
 
     public decimal Amount { get; set; }
 
-    public DateTime transactionDate { get; set; } 
+    public DateTime transactionDate { get; set; }
+    public TransactionStatus transactionStatus { get; set; }
 
     // Navigation 
-        
+
     public UserEntity? User { get; set; }
 }
