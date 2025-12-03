@@ -82,7 +82,7 @@ public class AdminBFFService : IAdminBFFService
     }
 
     // Update Server info
-    public async Task<AdminResult> UpdateServerInfoAsync(Guid serverId)
+    public async Task<bool> UpdateServerInfoAsync(Guid serverId)
     {
         // try to get serverDto
         var serverDto = await _dataService.Servers.GetByIdAsync(serverId);
@@ -91,42 +91,24 @@ public class AdminBFFService : IAdminBFFService
         {
             // updating server info 
             await _dataService.Servers.UpdateAsync(serverDto);
-            return new AdminResult
-            {
-                Success = true,
-                Message = "The server info has been upgraded successfully."
-            };
+            return true;
         }
         else
-        {
-            return new AdminResult
-            {
-                Success = false,
-                ErrorMessage = "The server cannot be found."
-            };
-        }
+            return false;
     }
 
 
     // Delete server 
-    public async Task<AdminResult> DeleteServerAsync(Guid serverId)
+    public async Task<bool> DeleteServerAsync(Guid serverId)
     {
         try
         {
             await _dataService.Servers.DeleteAsync(serverId);
-            return new AdminResult
-            {
-                Success = true,
-                Message = "The server has been deleted successfully."
-            };
+            return true;
         }
         catch
         {
-            return new AdminResult
-            {
-                Success = false,
-                ErrorMessage = "The server cannot be deleted."
-            };
+            return false;
         }
     }
 
@@ -169,33 +151,22 @@ public class AdminBFFService : IAdminBFFService
         return new AdminResult { Success = true, Message = "The tariff has been created." };
     }
 
-    public async Task<AdminResult> UpdateTariffAsync(Guid tariffId)
+    public async Task<bool> UpdateTariffAsync(Guid tariffId)
     {
         var tariff = await _dataService.Tariffs.GetByIdAsync(tariffId);
         if (tariff == null)
-            return new AdminResult { Success = false, Message = "The tariff was not found." };
+            return true;
 
         await _dataService.Tariffs.UpdateAsync(tariff);
-        return new AdminResult { Success = true, ErrorMessage = "The tariff has been updated." };
+        return false;
     }
 
-    public async Task<AdminResult> DeleteTariffAsync(Guid tariffId)
+    public async Task<bool> DeleteTariffAsync(Guid tariffId)
     {
-        try
-        {
-            if (await _dataService.Tariffs.DeleteAsync(tariffId))
-            {
-                return new AdminResult { Success = true, Message = "The tariff has been deleted." };
-            }
-            else
-            {
-                return new AdminResult { Success = false, ErrorMessage = "Error. The tariff was not deleted." };
-            }
-        }
-        catch
-        {
-            return new AdminResult { Success = false, ErrorMessage = "Error. The tariff was not deleted." };
-        }
+        if (await _dataService.Tariffs.DeleteAsync(tariffId))
+            return true;
+        else
+            return false;
     }
 
     public async Task<AdminResult> GetAllTariffsAsync()
@@ -215,10 +186,10 @@ public class AdminBFFService : IAdminBFFService
         }
         catch
         {
-            return new AdminResult 
-            { 
-                Success = false, 
-                ErrorMessage = "Error. The list could not be displayed" 
+            return new AdminResult
+            {
+                Success = false,
+                ErrorMessage = "Error. The list could not be displayed"
             };
         }
     }

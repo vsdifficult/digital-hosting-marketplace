@@ -1,6 +1,8 @@
-﻿using HostMarket.Core.Services.Interfaces;
+﻿using HostMarket.Core.Services.Implementations.Bff;
+using HostMarket.Core.Services.Interfaces;
 using HostMarket.Infrastructure.Data.DTO;
 using HostMarket.Shared.DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Writers;
 
@@ -8,17 +10,19 @@ using Microsoft.OpenApi.Writers;
 
 namespace HostMarket.Api.Controllers
 {
+    // controller for servers
     [Route("api/[controller]")]
     [ApiController]
-    public class AdminController : ControllerBase
+    [Authorize (Roles = "Admin")]
+    public class AdminServerController : ControllerBase
     {
         private readonly IAdminBFFService _adminBFFService;
-        public AdminController (IAdminBFFService adminBFFService)
+        public AdminServerController(IAdminBFFService adminBFFService)
         {
             _adminBFFService = adminBFFService;
         }
         [HttpPost("createServer")]
-        public async Task<IActionResult> EndpointCreateServerAsync(CreateServerDTO createDTO) 
+        public async Task<IActionResult> EndpointCreateServerAsync(CreateServerDTO createDTO)
         {
             try
             {
@@ -49,11 +53,10 @@ namespace HostMarket.Api.Controllers
         [HttpDelete("deleteServer")]
         public async Task<IActionResult> EndpointDeleteServerAsync(Guid id)
         {
-            var result = await _adminBFFService.DeleteServerAsync(id);
             try
             {
-                if (result.Success) return Ok(result.Message);
-                else return BadRequest(result.ErrorMessage);
+                if (await _adminBFFService.DeleteServerAsync(id)) return Ok(true);
+                else return BadRequest();
             }
             catch (Exception ex)
             {
@@ -66,8 +69,8 @@ namespace HostMarket.Api.Controllers
             var result = await _adminBFFService.UpdateServerInfoAsync(id);
             try
             {
-                if (result.Success)  return Ok(result.Message);
-                else return BadRequest(result.ErrorMessage);
+                if (await _adminBFFService.UpdateServerInfoAsync(id)) return Ok(true);
+                else return BadRequest();
             }
             catch (Exception ex)
             {
@@ -87,9 +90,19 @@ namespace HostMarket.Api.Controllers
                 return BadRequest(ex.Message);
             }
         }
+    }
 
 
-        //actions with the tariff
+    // controller for tariffs
+    [Route("api/[controller]")]
+    [ApiController]
+    public class AdminTariffController : ControllerBase
+    {
+        private readonly IAdminBFFService _adminBFFService;
+        public AdminTariffController(IAdminBFFService adminBFFService)
+        {
+            _adminBFFService = adminBFFService;
+        }
 
         [HttpPost("createTariff")]
         public async Task<IActionResult> EndpointCreateTariffASync(CreateTariffDto createTariffDto)
@@ -110,7 +123,7 @@ namespace HostMarket.Api.Controllers
             var result = await _adminBFFService.GetAllTariffsAsync();
             try
             {
-                if(result.Success) return Ok(result.DataListTariff);
+                if (result.Success) return Ok(result.DataListTariff);
                 else return BadRequest(result.ErrorMessage);
             }
             catch (Exception ex)
@@ -121,11 +134,10 @@ namespace HostMarket.Api.Controllers
         [HttpDelete("deleteTariff")]
         public async Task<IActionResult> EndpointDeleteTariffAsync(Guid id)
         {
-            var result = await _adminBFFService.DeleteTariffAsync(id);
             try
             {
-                if (result.Success) return Ok(result.Message);
-                else return BadRequest(result.ErrorMessage);
+                if (await _adminBFFService.DeleteTariffAsync(id)) return Ok(true);
+                else return BadRequest();
             }
             catch (Exception ex)
             {
@@ -135,11 +147,10 @@ namespace HostMarket.Api.Controllers
         [HttpPut("updateTariff")]
         public async Task<IActionResult> EndpointUpdateTariffAsync(Guid id)
         {
-            var result = await _adminBFFService.UpdateTariffAsync(id);
             try
             {
-                if (result.Success) return Ok(result.Message);
-                else return BadRequest(result.ErrorMessage);
+                if (await _adminBFFService.UpdateTariffAsync(id)) return Ok();
+                else return BadRequest();
             }
             catch (Exception ex)
             {

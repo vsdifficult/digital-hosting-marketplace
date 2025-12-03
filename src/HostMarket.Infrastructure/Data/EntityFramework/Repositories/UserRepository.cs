@@ -18,7 +18,6 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Repositories
         public async Task<Guid> CreateAsync(UserDTO entity)
         {
             var userEntity = UserMapper.FromUserDTOToEntity(entity);
-            userEntity.Id = Guid.NewGuid();
 
             await _context.Users.AddAsync(userEntity);
             await _context.SaveChangesAsync();

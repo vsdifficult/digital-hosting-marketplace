@@ -28,11 +28,11 @@ public interface IAdminBFFService
     // Just creating a seerver
     Task<AdminResult> CreateServerAsync(CreateServerDTO serverDTO);
     Task<AdminResult> GetAllServersAsync();
-    Task<AdminResult> UpdateServerInfoAsync(Guid serverID);
-    Task<AdminResult> DeleteServerAsync(Guid serverId);
+    Task<bool> UpdateServerInfoAsync(Guid serverID);
+    Task<bool> DeleteServerAsync(Guid serverId);
     Task<ServerResult> GetServerStatusAsync(Guid serverId);
     Task<AdminResult> CreateTariffAsync(CreateTariffDto createTariffDto);
-    Task<AdminResult> UpdateTariffAsync(Guid tariffId);
-    Task<AdminResult> DeleteTariffAsync(Guid tariffId);
+    Task<bool> UpdateTariffAsync(Guid tariffId);
+    Task<bool> DeleteTariffAsync(Guid tariffId);
     Task<AdminResult> GetAllTariffsAsync();
 }
