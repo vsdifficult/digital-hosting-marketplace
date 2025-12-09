@@ -50,6 +50,33 @@ public class ServerRepository: IServerRepository
         return server == null ? null : ServerMapper.FromEntityToDto(server);
     }
 
+    public async Task<IEnumerable<ServerDTO>> GetServersWithCompletedLeasesAsync()
+    {
+        var servers = await _context.Servers
+           .Where(s => s.RentalEnd <= DateTime.UtcNow)
+           .ToListAsync();
+
+        return servers.Select(s => ServerMapper.FromEntityToDto(s));
+    }
+
+    public async Task<bool> ResetLease(ServerDTO server)
+    {
+        try
+        {
+            server.ownerId = null;
+            server.ServStatus = Shared.Models.ServerStatus.Available;
+            server.RentalStart = null;
+            server.RentalEnd = null;
+            server.UpdateAt = DateTime.UtcNow;
+
+           return await UpdateAsync(server);
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
     public async Task<bool> UpdateAsync(ServerDTO entity)
     {
         var server = await _context.Servers.FindAsync(entity.Id);

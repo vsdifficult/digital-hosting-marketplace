@@ -22,6 +22,7 @@ namespace HostMarket.Core.Services.Interfaces
     {
         Task<ServerResult> ServerRentalAsync(Guid userId, Guid serverId);
         Task<bool> ConfirmTransactionAsync(Guid transactionId);
-       // Task<ServerResult> HealthCheckAsync(Guid serverId);
+        Task<bool> ResetLease(ServerDTO server);
+        // Task<ServerResult> HealthCheckAsync(Guid serverId);
     }
 }

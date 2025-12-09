@@ -13,7 +13,6 @@ namespace HostMarket.Api.Controllers
     // controller for servers
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize (Roles = "Admin")]
     public class AdminServerController : ControllerBase
     {
         private readonly IAdminBFFService _adminBFFService;

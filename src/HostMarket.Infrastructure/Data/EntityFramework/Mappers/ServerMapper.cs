@@ -23,7 +23,9 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Mappers
                 ServStatus = entity.ServStatus,
                 CreateAt = entity.CreateAt,
                 UpdateAt = entity.UpdateAt,
-                Status = entity.Status
+                Status = entity.Status,
+                RentalStart = entity.RentalStart,
+                RentalEnd = entity.RentalEnd
             };
         }
 
@@ -40,7 +42,9 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Mappers
                 ServStatus = dto.ServStatus,
                 CreateAt= dto.CreateAt,
                 UpdateAt= dto.UpdateAt,
-                Status = dto.Status
+                Status = dto.Status,
+                RentalStart = dto.RentalStart,
+                RentalEnd = dto.RentalEnd
             };
         }
 
@@ -55,6 +59,8 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Mappers
             entity.CreateAt = dto.CreateAt;
             entity.UpdateAt = DateTime.UtcNow;
             entity.Status = dto.Status;
+            entity.RentalStart = dto.RentalStart;
+            entity.RentalEnd = dto.RentalEnd;
         }
     }
 }
