@@ -16,7 +16,7 @@ public record AuthResult
     public string? Message { get; init; }
     public Guid UserId { get; init; }
     public string? Token { get; init; }
-    public int Code { get; init; }
+    public string? Code { get; init; }
     public UserRole? Role { get; init; }
 
 }
@@ -26,7 +26,9 @@ public record AuthResult
 /// </summary>
 public interface IAuthenticationService
 {
-    Task<AuthResult> SignUpAsync(UserRegisterDto dto);
+    Task<AuthResult> SignUpServerManagerAsync(UserRegisterDto registerDto);
+    Task<AuthResult> SignUpAdminAsync(UserRegisterDto registerDto);
+    Task<AuthResult> SignUpUserAsync(UserRegisterDto dto);
     Task<AuthResult> SignInAsync(UserLoginDTO dto);
     Task<AuthResult> VerificationAsync(VerificationDto dto);
     Task<AuthResult> DeleteAsync(Guid userid);

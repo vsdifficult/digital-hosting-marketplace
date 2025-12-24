@@ -29,7 +29,7 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Configurations
             builder.Property(t => t.Amount).IsRequired();
             builder.Property(t => t.transactionDate).IsRequired();
             builder.Property(t => t.transactionStatus);
-            builder.HasOne(t => t.User).WithMany(t => t.Transactions).IsRequired();
+            builder.HasOne(t => t.User).WithMany(t => t.Transactions);
         }
     }
 }

@@ -47,12 +47,10 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Configurations
                 .IsRequired();
 
             builder.HasMany(u => u.Servers)
-                .WithOne(s => s.User)
-                .IsRequired();  
-            
+                .WithOne(s => s.User);
+
             builder.HasMany(u => u.Transactions)
-                .WithOne(s => s.User)
-                .IsRequired(); 
+                .WithOne(s => s.User);
         }
     }
 }

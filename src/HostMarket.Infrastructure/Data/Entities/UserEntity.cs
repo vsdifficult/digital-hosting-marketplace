@@ -17,8 +17,8 @@ namespace HostMarket.Infrastructure.Data.Entities
 
         // Navigation 
 
-        public ICollection<ServerEntity> Servers { get; set; } = new List<ServerEntity>(); 
+        public ICollection<ServerEntity>? Servers { get; set; } = new List<ServerEntity>(); 
 
-        public ICollection<TransactionEntity> Transactions { get; set; } = new List<TransactionEntity>(); 
+        public ICollection<TransactionEntity>? Transactions { get; set; } = new List<TransactionEntity>(); 
     }
 }

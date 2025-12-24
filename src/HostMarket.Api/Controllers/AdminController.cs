@@ -13,6 +13,7 @@ namespace HostMarket.Api.Controllers
     // controller for servers
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Admin,ServerManager")]
     public class AdminServerController : ControllerBase
     {
         private readonly IAdminBFFService _adminBFFService;
@@ -95,6 +96,7 @@ namespace HostMarket.Api.Controllers
     // controller for tariffs
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles = "Admin,ServerManager")]
     public class AdminTariffController : ControllerBase
     {
         private readonly IAdminBFFService _adminBFFService;
