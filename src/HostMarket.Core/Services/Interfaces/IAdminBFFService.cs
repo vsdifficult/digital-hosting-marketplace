@@ -11,28 +11,35 @@ using HostMarket.Shared.Models;
 
 namespace HostMarket.Core.Services.Interfaces;
 
-public record AdminResult
+public record ServerResult
 {
-    public bool Success { get; init; }
-    public string? Message { get; init; }
-    public string? ErrorMessage { get; init; }
-    public Dictionary<string, string>? Data { get; init; }
-    public Dictionary<string, IEnumerable<ServerDTO>>? DataList { get; init; }
-    public Dictionary<string, IEnumerable<TariffDto>>? DataListTariff { get; init; }
-    public TransactionStatus? transactionStatus { get; init; }
+    public string Ip {get;init;} 
+    public int Port {get;init;} 
+    public ServerStatus Status {get; init;}  
+    public string ErrorMessage {get;init;}
 }
+public record AdminResult<T>
+{
+    public bool Success {get;init;} 
+    public string Message {get;init;} 
+    public string IP {get;init;}
+    public int Port {get;init;} 
+    public string ErrorMessage {get;init;}  
+
+    public List<T>? DataList {get;init;}
+} 
 
 public interface IAdminBFFService
 {
-    
+
     // Just creating a seerver
-    Task<AdminResult> CreateServerAsync(CreateServerDTO serverDTO);
-    Task<AdminResult> GetAllServersAsync();
-    Task<bool> UpdateServerInfoAsync(Guid serverID);
-    Task<bool> DeleteServerAsync(Guid serverId);
+    Task<AdminResult<object>> CreateServerAsync(CreateServerDTO serverDTO);
+    Task<AdminResult<IEnumerable<ServerDTO>>> GetAllServersAsync();
+    Task<AdminResult<object>> UpdateServerInfoAsync(Guid serverID);
+    Task<AdminResult<object>> DeleteServerAsync(Guid serverId);
     Task<ServerResult> GetServerStatusAsync(Guid serverId);
-    Task<AdminResult> CreateTariffAsync(CreateTariffDto createTariffDto);
-    Task<bool> UpdateTariffAsync(Guid tariffId);
-    Task<bool> DeleteTariffAsync(Guid tariffId);
-    Task<AdminResult> GetAllTariffsAsync();
+    Task<AdminResult<object>> CreateTariffAsync(CreateTariffDto createTariffDto);
+    Task<AdminResult<object>> UpdateTariffAsync(Guid tariffId);
+    Task<AdminResult<object>> DeleteTariffAsync(Guid tariffId);
+    Task<AdminResult<IEnumerable<TariffDto>>> GetAllTariffsAsync();
 }
