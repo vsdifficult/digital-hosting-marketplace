@@ -15,7 +15,10 @@ namespace HostMarket.Infrastructure.Data.DTO
         public string ServerName { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
-        public ServerStatus ServStatus { get; set; }
+        public ServerStatus ServStatus { get; set; } 
+        public int Port {get; set;} 
+        public string IP {get; set;} 
+        public string ContainerId {get; set;}
 
         public DateTime CreateAt { get; set; }
         public DateTime UpdateAt { get; set; }

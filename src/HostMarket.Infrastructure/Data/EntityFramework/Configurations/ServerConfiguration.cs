@@ -35,6 +35,12 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Configurations
                 .HasMaxLength(400)
                 .IsRequired();
 
+            builder.Property(s => s.IP) 
+                .IsRequired();  
+
+            builder.Property(s => s.Port) 
+                .IsRequired(); 
+                
             builder.Property(s => s.Price)
                 .IsRequired();
 
