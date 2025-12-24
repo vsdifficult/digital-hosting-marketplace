@@ -26,9 +26,7 @@ public record AuthResult
 /// </summary>
 public interface IAuthenticationService
 {
-    Task<AuthResult> SignUpServerManagerAsync(UserRegisterDto registerDto);
-    Task<AuthResult> SignUpAdminAsync(UserRegisterDto registerDto);
-    Task<AuthResult> SignUpUserAsync(UserRegisterDto dto);
+    Task<AuthResult> SignUpAsync(UserRegisterDto dto);
     Task<AuthResult> SignInAsync(UserLoginDTO dto);
     Task<AuthResult> VerificationAsync(VerificationDto dto);
     Task<AuthResult> DeleteAsync(Guid userid);

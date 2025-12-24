@@ -25,62 +25,6 @@ public class AuthService : IAuthenticationService
 
     // ----- Main Part -----
 
-    // SignUp for Admin
-    public async Task<AuthResult> SignUpAdminAsync(UserRegisterDto registerDto)
-    {
-        try
-        {
-            // if user exist checking
-            if (await _userRepository.IsUserExistsByEmailAsync(registerDto.Email))
-            {
-                return new AuthResult
-                {
-                    Success = false,
-                    ErrorMessage = "User with this email already exists"
-                };
-            }
-
-            // installing the verification code
-            var verificationCode = new Random().Next(10000, 99999).ToString();
-            await _userRepository.SetVerificationCodeAsync(registerDto.Email, verificationCode);
-
-            // password hashing
-            var passwordHash = BCrypt.Net.BCrypt.HashPassword(registerDto.Password);
-
-            // Creating new userDto
-            var user = new UserDTO
-            {
-                Id = Guid.NewGuid(),
-                UserName = registerDto.Username,
-                Email = registerDto.Email,
-                Password = passwordHash,
-                Code = verificationCode,
-                Role = UserRole.Admin
-            };
-
-            // Add a user to the DB
-            await _userRepository.CreateAsync(user);
-
-            // Return the report
-            return new AuthResult
-            {
-                Success = true,
-                UserId = user.Id,
-                Role = user.Role,
-                Code = user.Code
-            };
-        }
-
-        catch (Exception ex)
-        {
-            return new AuthResult
-            {
-                Success = false,
-                ErrorMessage = "An error occurred during sign up"
-            };
-        }
-    }
-
     // SingIn Function
     public async Task<AuthResult> SignInAsync(UserLoginDTO loginDTO)
     {
@@ -123,7 +67,7 @@ public class AuthService : IAuthenticationService
 
 
     // SingUp for User function
-    public async Task<AuthResult> SignUpUserAsync(UserRegisterDto registerDto)
+    public async Task<AuthResult> SignUpAsync(UserRegisterDto registerDto)
     {
         try
         {
@@ -152,7 +96,7 @@ public class AuthService : IAuthenticationService
                 Email = registerDto.Email,
                 Password = passwordHash,
                 Code = verificationCode,
-                Role = UserRole.User
+                Role = registerDto.Role
             };
 
             // Add a user to the DB
@@ -261,61 +205,6 @@ public class AuthService : IAuthenticationService
         return new AuthResult { Success = result };
     }
 
-    // signup fo server manager
-    public async Task<AuthResult> SignUpServerManagerAsync(UserRegisterDto registerDto)
-    {
-        try
-        {
-            // if user exist checking
-            if (await _userRepository.IsUserExistsByEmailAsync(registerDto.Email))
-            {
-                return new AuthResult
-                {
-                    Success = false,
-                    ErrorMessage = "User with this email already exists"
-                };
-            }
-
-            // installing the verification code
-            var verificationCode = new Random().Next(10000, 99999).ToString();
-            await _userRepository.SetVerificationCodeAsync(registerDto.Email, verificationCode);
-
-            // password hashing
-            var passwordHash = BCrypt.Net.BCrypt.HashPassword(registerDto.Password);
-
-            // Creating new userDto
-            var user = new UserDTO
-            {
-                Id = Guid.NewGuid(),
-                UserName = registerDto.Username,
-                Email = registerDto.Email,
-                Password = passwordHash,
-                Code = verificationCode,
-                Role = UserRole.ServerManager
-            };
-
-            // Add a user to the DB
-            await _userRepository.CreateAsync(user);
-
-            // Return the report
-            return new AuthResult
-            {
-                Success = true,
-                UserId = user.Id,
-                Role = user.Role,
-                Code = user.Code
-            };
-        }
-
-        catch (Exception ex)
-        {
-            return new AuthResult
-            {
-                Success = false,
-                ErrorMessage = "An error occurred during sign up"
-            };
-        }
-    }
 
 
     // // Token validation
