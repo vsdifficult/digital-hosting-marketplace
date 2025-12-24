@@ -9,6 +9,7 @@ public record TransactionDto
     public Guid serverId { get; set; }
     public decimal Amount { get; init; }
     public DateTime transactionDate { get; init; }
+    public TransactionStatus transactionStatus { get; set; }
     public DateTime CreateAt { get; set; }
     public DateTime UpdateAt { get; set; }
 

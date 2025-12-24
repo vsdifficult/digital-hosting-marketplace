@@ -10,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Npgsql;
 using System.Text;
+using HostMarket.Infrastructure.BackgroundJobs;
+using HostMarket.Core.Services.Implementations.Bff;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -43,8 +45,12 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+builder.Services.AddScoped<IDataService, DataService>();
+builder.Services.AddHostedService<LeaseCheckBackgroundService>();
 builder.Services.AddScoped<IAuthenticationService, AuthService>();
-builder.Services.AddScoped<IUserRepository, UserRepository>(); 
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IAdminBFFService, AdminBFFService>();
+builder.Services.AddScoped<IServerBFFService,  ServerBFFService>();
 
 builder.Services.AddControllers();
 

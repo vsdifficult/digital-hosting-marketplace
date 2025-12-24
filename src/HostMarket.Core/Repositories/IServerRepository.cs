@@ -11,7 +11,7 @@ namespace HostMarket.Core.Repositories
 {
     public interface IServerRepository : IRepository<ServerDTO, Guid>
     {
-        
+        Task<IEnumerable<ServerDTO>> GetServersWithCompletedLeasesAsync();
     }
 }
 

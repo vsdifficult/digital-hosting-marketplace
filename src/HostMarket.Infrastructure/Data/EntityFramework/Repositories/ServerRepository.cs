@@ -50,6 +50,14 @@ public class ServerRepository: IServerRepository
         return server == null ? null : ServerMapper.FromEntityToDto(server);
     }
 
+    public async Task<IEnumerable<ServerDTO>> GetServersWithCompletedLeasesAsync()
+    {
+        var servers = await _context.Servers
+           .Where(s => s.RentalEnd <= DateTime.UtcNow)
+           .ToListAsync();
+
+        return servers.Select(s => ServerMapper.FromEntityToDto(s));
+    }
     public async Task<bool> UpdateAsync(ServerDTO entity)
     {
         var server = await _context.Servers.FindAsync(entity.Id);

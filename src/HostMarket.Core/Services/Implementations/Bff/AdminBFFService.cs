@@ -46,7 +46,8 @@ public class AdminBFFService : IAdminBFFService
         return new AdminResult
         {
             Success = true,
-            Data = dict
+            Data = dict,
+            Message = "The server has been created."
         };
 
     }
@@ -54,23 +55,34 @@ public class AdminBFFService : IAdminBFFService
     // Get Servers ID function
     public async Task<AdminResult> GetAllServersAsync()
     {
-        // getting the server dto
-        var servers = await _dataService.Servers.GetAllAsync();
+        try
+        {
+            // getting the server dto
+            var servers = await _dataService.Servers.GetAllAsync();
 
-        // Data dict
-        var dict = new Dictionary<string, IEnumerable<ServerDTO>>
+            // Data dict
+            var dict = new Dictionary<string, IEnumerable<ServerDTO>>
+            {
+                ["Servers"] = servers
+            };
+            return new AdminResult
+            {
+                Success = true,
+                DataList = dict
+            };
+        }
+        catch
         {
-            ["Servers"] = servers
-        };
-        return new AdminResult
-        {
-            Success = true,
-            DataList = dict
-        };
+            return new AdminResult
+            {
+                Success = false,
+                ErrorMessage = "Error. The list could not be displayed."
+            };
+        }
     }
 
     // Update Server info
-    public async Task<AdminResult> UpdateServerInfoAsync(Guid serverId)
+    public async Task<bool> UpdateServerInfoAsync(Guid serverId)
     {
         // try to get serverDto
         var serverDto = await _dataService.Servers.GetByIdAsync(serverId);
@@ -79,43 +91,24 @@ public class AdminBFFService : IAdminBFFService
         {
             // updating server info 
             await _dataService.Servers.UpdateAsync(serverDto);
-            return new AdminResult
-            {
-                Success = true,
-                Message = "The server info has been upgraded successfully."
-            };
+            return true;
         }
         else
-        {
-            return new AdminResult
-            {
-                Success = false,
-                Message = "The server cannot be found."
-            };
-        }
+            return false;
     }
 
 
     // Delete server 
-    public async Task<AdminResult> DeleteServerAsync(Guid serverId)
+    public async Task<bool> DeleteServerAsync(Guid serverId)
     {
         try
         {
             await _dataService.Servers.DeleteAsync(serverId);
-            return new AdminResult
-            {
-                Success = true,
-                Message = "The server has been deleted successfully."
-            };
+            return true;
         }
-
         catch
         {
-            return new AdminResult
-            {
-                Success = false,
-                ErrorMessage = "The server cannot be deleted."
-            };
+            return false;
         }
     }
 
@@ -158,40 +151,46 @@ public class AdminBFFService : IAdminBFFService
         return new AdminResult { Success = true, Message = "The tariff has been created." };
     }
 
-    public async Task<AdminResult> UpdateTariffAsync(Guid tariffId)
+    public async Task<bool> UpdateTariffAsync(Guid tariffId)
     {
         var tariff = await _dataService.Tariffs.GetByIdAsync(tariffId);
         if (tariff == null)
-            return new AdminResult { Success = false, Message = "The tariff was not found." };
+            return true;
 
         await _dataService.Tariffs.UpdateAsync(tariff);
-        return new AdminResult { Success = true, ErrorMessage = "The tariff has been updated." };
+        return false;
     }
 
-    public async Task<AdminResult> DeleteTariffAsync(Guid tariffId)
+    public async Task<bool> DeleteTariffAsync(Guid tariffId)
     {
-        try
-        {
-            var result = await _dataService.Tariffs.DeleteAsync(tariffId);
-            return new AdminResult { Success = result, Message = "The tariff has been deleted." };
-        }
-        catch
-        {
-            return new AdminResult { Success = false, ErrorMessage = "Error. The tariff was not deleted." };
-        }
+        if (await _dataService.Tariffs.DeleteAsync(tariffId))
+            return true;
+        else
+            return false;
     }
 
     public async Task<AdminResult> GetAllTariffsAsync()
     {
-        var tariffs = await _dataService.Tariffs.GetAllAsync();
-        var dict = new Dictionary<string, IEnumerable<TariffDto>>
+        try
         {
-            ["Tariffs"] = tariffs
-        };
-        return new AdminResult
+            var tariffs = await _dataService.Tariffs.GetAllAsync();
+            var dict = new Dictionary<string, IEnumerable<TariffDto>>
+            {
+                ["Tariffs"] = tariffs
+            };
+            return new AdminResult
+            {
+                Success = true,
+                DataListTariff = dict
+            };
+        }
+        catch
         {
-            Success = true,
-            DataListTariff = dict
-        };
+            return new AdminResult
+            {
+                Success = false,
+                ErrorMessage = "Error. The list could not be displayed"
+            };
+        }
     }
 }

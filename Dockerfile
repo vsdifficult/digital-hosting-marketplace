@@ -9,9 +9,9 @@ COPY ["src/HostMarket.Infrastructure/HostMarket.Infrastructure.csproj", "src/Hos
 COPY ["src/HostMarket.Shared/HostMarket.Shared.csproj", "src/HostMarket.Shared/"]
 
 # Copy solution file
-COPY ["HostingMarket.sln", "."]
+COPY ["digital-hosting-marketplace.sln", "."]
 
-RUN dotnet restore "HostingMarket.sln"
+RUN dotnet restore "digital-hosting-marketplace.sln"
 
 # Copy the rest of the source code
 COPY . .

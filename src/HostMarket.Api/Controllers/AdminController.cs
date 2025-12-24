@@ -1,6 +1,8 @@
-﻿using HostMarket.Core.Services.Interfaces;
+﻿using HostMarket.Core.Services.Implementations.Bff;
+using HostMarket.Core.Services.Interfaces;
 using HostMarket.Infrastructure.Data.DTO;
 using HostMarket.Shared.DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Writers;
 
@@ -8,22 +10,23 @@ using Microsoft.OpenApi.Writers;
 
 namespace HostMarket.Api.Controllers
 {
+    // controller for servers
     [Route("api/[controller]")]
     [ApiController]
-    public class AdminController : ControllerBase
+    public class AdminServerController : ControllerBase
     {
         private readonly IAdminBFFService _adminBFFService;
-        public AdminController (IAdminBFFService adminBFFService)
+        public AdminServerController(IAdminBFFService adminBFFService)
         {
             _adminBFFService = adminBFFService;
         }
         [HttpPost("createServer")]
-        public async Task<IActionResult> EndpointCreateServerAsync(CreateServerDTO createDTO) 
+        public async Task<IActionResult> EndpointCreateServerAsync(CreateServerDTO createDTO)
         {
             try
             {
-                var server = await _adminBFFService.CreateServerAsync(createDTO);
-                return Ok(server);
+                var result = await _adminBFFService.CreateServerAsync(createDTO);
+                return Ok(result.Message);
             }
             catch (Exception ex)
             {
@@ -34,10 +37,11 @@ namespace HostMarket.Api.Controllers
         [HttpGet("getAllServers")]
         public async Task<IActionResult> EndpiontGetAllServersAsync()
         {
+            var result = await _adminBFFService.GetAllServersAsync();
             try
             {
-                var servers = await _adminBFFService.GetAllServersAsync();
-                return Ok(servers);
+                if (result.Success) return Ok(result.DataList);
+                else return BadRequest(result.ErrorMessage);
             }
             catch (Exception ex)
             {
@@ -51,7 +55,7 @@ namespace HostMarket.Api.Controllers
             try
             {
                 if (await _adminBFFService.DeleteServerAsync(id)) return Ok(true);
-                return BadRequest();
+                else return BadRequest();
             }
             catch (Exception ex)
             {
@@ -61,10 +65,11 @@ namespace HostMarket.Api.Controllers
         [HttpPut("updateServer")]
         public async Task<IActionResult> EndpointUpdateServerAsync(Guid id)
         {
+            var result = await _adminBFFService.UpdateServerInfoAsync(id);
             try
             {
                 if (await _adminBFFService.UpdateServerInfoAsync(id)) return Ok(true);
-                return BadRequest();
+                else return BadRequest();
             }
             catch (Exception ex)
             {
@@ -74,26 +79,37 @@ namespace HostMarket.Api.Controllers
         [HttpGet("getServerStatus")]
         public async Task<IActionResult> EndpointGetServerStatusAsync(Guid id)
         {
+            var result = await _adminBFFService.GetServerStatusAsync(id);
             try
             {
-                return Ok(await _adminBFFService.GetServerStatusAsync(id));
+                return Ok(result.Status);
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
         }
+    }
 
 
-        //actions with the tariff
+    // controller for tariffs
+    [Route("api/[controller]")]
+    [ApiController]
+    public class AdminTariffController : ControllerBase
+    {
+        private readonly IAdminBFFService _adminBFFService;
+        public AdminTariffController(IAdminBFFService adminBFFService)
+        {
+            _adminBFFService = adminBFFService;
+        }
 
         [HttpPost("createTariff")]
         public async Task<IActionResult> EndpointCreateTariffASync(CreateTariffDto createTariffDto)
         {
             try
             {
-                var tariff = await _adminBFFService.CreateTariffAsync(createTariffDto);
-                return Ok(tariff);
+                var result = await _adminBFFService.CreateTariffAsync(createTariffDto);
+                return Ok(result.Message);
             }
             catch (Exception ex)
             {
@@ -103,10 +119,11 @@ namespace HostMarket.Api.Controllers
         [HttpGet("getAllTariffs")]
         public async Task<IActionResult> EndpointGetAllTariffsAsync()
         {
+            var result = await _adminBFFService.GetAllTariffsAsync();
             try
             {
-                var tariffs = await _adminBFFService.GetAllTariffsAsync();
-                return Ok(tariffs);
+                if (result.Success) return Ok(result.DataListTariff);
+                else return BadRequest(result.ErrorMessage);
             }
             catch (Exception ex)
             {
@@ -119,7 +136,7 @@ namespace HostMarket.Api.Controllers
             try
             {
                 if (await _adminBFFService.DeleteTariffAsync(id)) return Ok(true);
-                return BadRequest(false);
+                else return BadRequest();
             }
             catch (Exception ex)
             {
@@ -131,8 +148,8 @@ namespace HostMarket.Api.Controllers
         {
             try
             {
-                if (await _adminBFFService.UpdateTariffAsync(id)) return Ok(true);
-                return BadRequest(false);
+                if (await _adminBFFService.UpdateTariffAsync(id)) return Ok();
+                else return BadRequest();
             }
             catch (Exception ex)
             {

@@ -52,7 +52,6 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Repositories
             return TransactionMapper.FromEntityToDto(transaction);
         }
 
-
         public async Task<bool> UpdateAsync(TransactionDto entity)
         {
             var transaction = await _context.Transactions.FindAsync(entity.Id);

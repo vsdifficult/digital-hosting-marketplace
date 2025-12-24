@@ -10,10 +10,12 @@ namespace HostMarket.Infrastructure.Data.Entities
         public string Description { get; set; }
         public decimal Price { get; set; }
         public ServerStatus ServStatus { get; set; }
+        public DateTime? RentalStart {  get; set; }
+        public DateTime? RentalEnd { get; set; }
 
-        
+
         // Navigation 
-        
+
         public UserEntity? User { get; set; }
         public TariffEntity Tariff { get; set; }
     }
