@@ -9,10 +9,7 @@ namespace HostMarket.Shared.Models;
 public enum ServerStatus
 {
     Available,
-    Purchased, 
-    Running,
-    Stopped,
-    Unknown
+    Purchased
 }
 
 public enum Status
