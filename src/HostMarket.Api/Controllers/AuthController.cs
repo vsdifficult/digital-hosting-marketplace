@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc; 
 using HostMarket.Core.Services.Interfaces;
 using HostMarket.Shared.Dto;
+
 namespace HostMarket.Api.Controllers
 {
     [Route("api/[controller]")]
@@ -14,7 +15,7 @@ namespace HostMarket.Api.Controllers
         }
 
         [HttpPost("signup")]
-        public async Task<IActionResult> EndpointSignUpAsync([FromBody] UserRegisterDto registerDto)
+        public async Task<IActionResult> EndpointSignAsync([FromBody] UserRegisterDto registerDto)
         {
             try
             {

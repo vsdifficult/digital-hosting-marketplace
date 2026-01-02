@@ -20,6 +20,9 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Repositories
 
         public async Task<Guid> CreateAsync(TariffDto dto)
         {
+            dto.CreateAt = DateTime.UtcNow;
+            dto.UpdateAt = DateTime.UtcNow;
+
             var tariff = TariffMapper.FromDtoToEntity(dto);
 
             await _dataContext.Tariffs.AddAsync(tariff);

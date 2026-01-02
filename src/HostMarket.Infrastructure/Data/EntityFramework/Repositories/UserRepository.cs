@@ -17,6 +17,10 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Repositories
 
         public async Task<Guid> CreateAsync(UserDTO entity)
         {
+            entity.CreateAt = DateTime.UtcNow;
+            entity.UpdateAt = DateTime.UtcNow;
+            entity.RegistrationDate = DateTime.UtcNow;
+
             var userEntity = UserMapper.FromUserDTOToEntity(entity);
 
             await _context.Users.AddAsync(userEntity);

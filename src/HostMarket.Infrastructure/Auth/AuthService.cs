@@ -43,14 +43,15 @@ public class AuthService : IAuthenticationService
             }
 
             // Genering jwt-token 
-            var token = await GenerateTokenAsync(user.Id);
+            var token = await GenerateTokenAsync(user);
 
             // return the report
             return new AuthResult
             {
                 Success = true,
                 UserId = user.Id,
-                Token = token.ToString()
+                Token = token.ToString(),
+                Role = user.Role
             };
         }
 
@@ -65,7 +66,7 @@ public class AuthService : IAuthenticationService
     }
 
 
-    // SingUp function
+    // SingUp for User function
     public async Task<AuthResult> SignUpAsync(UserRegisterDto registerDto)
     {
         try
@@ -88,28 +89,26 @@ public class AuthService : IAuthenticationService
             var passwordHash = BCrypt.Net.BCrypt.HashPassword(registerDto.Password);
 
             // Creating new userDto
-            var userId = Guid.NewGuid();
             var user = new UserDTO
             {
-                Id = userId,
+                Id = Guid.NewGuid(),
                 UserName = registerDto.Username,
                 Email = registerDto.Email,
                 Password = passwordHash,
-                Code = verificationCode
+                Code = verificationCode,
+                Role = registerDto.Role
             };
 
             // Add a user to the DB
             await _userRepository.CreateAsync(user);
 
-            // Genering jwt-token
-            var token = await GenerateTokenAsync(userId);
-
             // Return the report
             return new AuthResult
             {
                 Success = true,
-                UserId = userId,
-                Token = token
+                UserId = user.Id,
+                Role = user.Role,
+                Code = user.Code
             };
         }
 
@@ -134,7 +133,7 @@ public class AuthService : IAuthenticationService
     // ----- Sup part -----
 
     // Generate jwt-token function
-    private async Task<string> GenerateTokenAsync(Guid userId)
+    private async Task<string> GenerateTokenAsync(UserDTO user)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
         var key = Encoding.ASCII.GetBytes(_configuration["AppSettings:JwtSecret"] ?? string.Empty);
@@ -142,12 +141,10 @@ public class AuthService : IAuthenticationService
         // creating a claims list for jwt
         var claims = new List<Claim>
         {
-            new (ClaimTypes.NameIdentifier, userId.ToString())
+            new (ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new (ClaimTypes.Role, user.Role.ToString()),
+            new ("UserName", user.UserName)
         };
-
-        // Claim - Username
-        var user = await _userRepository.GetByIdAsync(userId);
-        claims.Add(new Claim("UserName", user.UserName));
 
         // Creating jwt
         var tokenDescriptor = new SecurityTokenDescriptor
@@ -156,7 +153,9 @@ public class AuthService : IAuthenticationService
             Expires = DateTime.UtcNow.AddHours(24),
             SigningCredentials = new SigningCredentials(
                 new SymmetricSecurityKey(key),
-                Microsoft.IdentityModel.Tokens.SecurityAlgorithms.HmacSha256Signature)
+                Microsoft.IdentityModel.Tokens.SecurityAlgorithms.HmacSha256Signature),
+            Audience = "Audience",
+            Issuer = "Issuer"
         };
 
         // return token
@@ -171,10 +170,10 @@ public class AuthService : IAuthenticationService
             var user = await _userRepository.GetByEmailAsync(verificationDto.Email);
             if (user == null)
             {
-                return new AuthResult 
-                { 
-                    Success = false, 
-                    ErrorMessage = "User not found" 
+                return new AuthResult
+                {
+                    Success = false,
+                    ErrorMessage = "User not found"
                 };
             }
             if (user.Code != verificationDto.Code)
@@ -191,10 +190,10 @@ public class AuthService : IAuthenticationService
         }
         catch (Exception ex)
         {
-            return new AuthResult 
-            { 
-                Success = false, 
-                ErrorMessage = "An error occurred during verification" 
+            return new AuthResult
+            {
+                Success = false,
+                ErrorMessage = "An error occurred during verification"
             };
         }
 
@@ -205,6 +204,7 @@ public class AuthService : IAuthenticationService
         var result = await _userRepository.DeleteAsync(userid);
         return new AuthResult { Success = result };
     }
+
 
 
     // // Token validation

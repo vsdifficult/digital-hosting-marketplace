@@ -13,6 +13,6 @@ namespace HostMarket.Infrastructure.Data.Entities
         public decimal DiskGb { get; set; }
         public decimal Price { get; set; }
         
-        public ICollection<ServerEntity> Servers { get; set; } = new List<ServerEntity>();
+        public ICollection<ServerEntity>? Servers { get; set; } = new List<ServerEntity>();
     }
 }

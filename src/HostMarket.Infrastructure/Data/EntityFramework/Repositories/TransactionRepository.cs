@@ -22,6 +22,7 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Repositories
             var transactionEntity = TransactionMapper.FromDtoToEnity(entity);
             transactionEntity.Id = Guid.NewGuid();
             transactionEntity.CreateAt = DateTime.UtcNow;
+            transactionEntity.UpdateAt = DateTime.UtcNow;
             transactionEntity.transactionDate = DateTime.UtcNow;
 
             await _context.Transactions.AddAsync(transactionEntity);

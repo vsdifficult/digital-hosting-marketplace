@@ -16,7 +16,7 @@ public record AuthResult
     public string? Message { get; init; }
     public Guid UserId { get; init; }
     public string? Token { get; init; }
-    public int Code { get; init; }
+    public string? Code { get; init; }
     public UserRole? Role { get; init; }
 
 }
