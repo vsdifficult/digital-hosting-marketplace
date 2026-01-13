@@ -1,5 +1,7 @@
 ﻿using HostMarket.Core.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -7,6 +9,7 @@ namespace HostMarket.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class BuyerController : ControllerBase
     {
         private readonly IBuyerBffService _buyerBffService;
@@ -16,11 +19,16 @@ namespace HostMarket.Api.Controllers
         }
 
         [HttpGet("userContext")]
-        public async Task<IActionResult> EndpointGetUserContextAsync(Guid id)
+        public async Task<IActionResult> EndpointGetUserContextAsync()
         {
+            // a temporary solution until the implementation of the new logic with the API
+            var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userIdString) || !Guid.TryParse(userIdString, out Guid userId))
+                return BadRequest("Неверный или отсутствующий идентификатор пользователя");
+
             try
             {
-                var user = await _buyerBffService.GetUserContextAsync(id);
+                var user = await _buyerBffService.GetUserContextAsync(userId);
                 return Ok(user);
             }
             catch (Exception ex)
@@ -30,11 +38,16 @@ namespace HostMarket.Api.Controllers
         }
 
         [HttpGet("userBalance")]
-        public async Task<IActionResult> EndpointGetUserBalance(Guid id)
+        public async Task<IActionResult> EndpointGetUserBalance()
         {
+            // a temporary solution until the implementation of the new logic with the API
+            var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userIdString) || !Guid.TryParse(userIdString, out Guid userId))
+                return BadRequest("Неверный или отсутствующий идентификатор пользователя");
+
             try
             {
-                var balance = await _buyerBffService.GetUserBalanceAsync(id);
+                var balance = await _buyerBffService.GetUserBalanceAsync(userId);
                 return Ok(balance);
             }
             catch (Exception ex)
