@@ -1,12 +1,13 @@
 ﻿using HostMarket.Core.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.AspNetCore.Authorization;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace HostMarket.Api.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController] 
+    [Authorize(Roles = "Admin,ServerManager")]
     public class ServerController : ControllerBase
     {
         private readonly IServerBFFService _serverBFFService;

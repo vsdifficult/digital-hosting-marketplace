@@ -10,41 +10,47 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Mappers
 {
     public class ServerMapper
     {
-        public static ServerDTO FromEntityToDto(ServerEntity entity)
+        public static ServerDTO FromEntityToDto(ServerEntity body)
         {
             return new ServerDTO
             {
-                Id = entity.Id,
-                ownerId = entity.ownerId,
-                TariffId = entity.TariffId,
-                ServerName = entity.ServerName,
-                Description = entity.Description,
-                Price = entity.Price,
-                ServStatus = entity.ServStatus,
-                CreateAt = entity.CreateAt,
-                UpdateAt = entity.UpdateAt,
-                Status = entity.Status,
-                RentalStart = entity.RentalStart,
-                RentalEnd = entity.RentalEnd
+                Id = body.Id,
+                ownerId = body.ownerId,
+                TariffId = body.TariffId,
+                ServerName = body.ServerName,
+                Description = body.Description,
+                Price = body.Price,
+                ServStatus = body.ServStatus,
+                CreateAt = body.CreateAt,
+                UpdateAt = body.UpdateAt,
+                Status = body.Status,
+                RentalStart = body.RentalStart,
+                RentalEnd = body.RentalEnd,
+                IP = body.IP,
+                Port = body.Port,
+                ContainerId = body.ContainerId
             };
         }
 
-        public static ServerEntity FromDtoToEntity(ServerDTO dto)
+        public static ServerEntity FromDtoToEntity(ServerDTO body)
         {
             return new ServerEntity
             {
-                Id = dto.Id,
-                ownerId = dto.ownerId,
-                TariffId = dto.TariffId,
-                ServerName = dto.ServerName,
-                Description = dto.Description,
-                Price = dto.Price,
-                ServStatus = dto.ServStatus,
-                CreateAt= dto.CreateAt,
-                UpdateAt= dto.UpdateAt,
-                Status = dto.Status,
-                RentalStart = dto.RentalStart,
-                RentalEnd = dto.RentalEnd
+                Id = body.Id,
+                ownerId = body.ownerId,
+                TariffId = body.TariffId,
+                ServerName = body.ServerName,
+                Description = body.Description,
+                Price = body.Price,
+                ServStatus = body.ServStatus,
+                CreateAt = body.CreateAt,
+                UpdateAt = body.UpdateAt,
+                Status = body.Status,
+                RentalStart = body.RentalStart,
+                RentalEnd = body.RentalEnd,
+                IP = body.IP,
+                Port = body.Port,
+                ContainerId = body.ContainerId
             };
         }
 
@@ -60,7 +66,10 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Mappers
             entity.UpdateAt = DateTime.UtcNow;
             entity.Status = dto.Status;
             entity.RentalStart = dto.RentalStart;
-            entity.RentalEnd = dto.RentalEnd;
+            entity.RentalEnd = dto.RentalEnd; 
+            entity.IP = dto.IP; 
+            entity.Port = dto.Port;
+            entity.ContainerId = dto.ContainerId;
         }
     }
 }

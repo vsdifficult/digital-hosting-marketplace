@@ -15,20 +15,42 @@ namespace HostMarket.Core.Services.Implementations.Bff
         {
             _dataService = dataService;
         }
-        public async Task<decimal?> GetUserBalanceAsync(Guid userId)
+        public async Task<BuyerResult<object>> GetUserBalanceAsync(Guid userId)
         {
             var user = await _dataService.Users.GetByIdAsync(userId);
-            if (user == null) return null;
+            if (user == null)
+            {
+                return new BuyerResult<object>
+                {
+                    Success = false,
+                    ErrorMessage = "Error. The user was not found."
+                };
+            }
 
-            return user.Balance;
+            return new BuyerResult<object>
+            {
+                Success = true,
+                Balance = user.Balance
+            };
         }
 
-        public async Task<UserDTO?> GetUserContextAsync(Guid userId)
+        public async Task<BuyerResult<object>> GetUserContextAsync(Guid userId)
         {
             var user = await _dataService.Users.GetByIdAsync(userId);
-            if (user == null) return null;
+            if (user == null)
+            {
+                return new BuyerResult<object>
+                {
+                    Success = false,
+                    ErrorMessage = "Error. The user was not found."
+                };
+            }
 
-            return user;
+            return new BuyerResult<object>
+            {
+                Success = true,
+                User = user
+            };
         }
     }
 }

@@ -28,8 +28,9 @@ namespace HostMarket.Api.Controllers
 
             try
             {
-                var user = await _buyerBffService.GetUserContextAsync(userId);
-                return Ok(user);
+                var result = await _buyerBffService.GetUserContextAsync(userId);
+                if(result.Success) return Ok(result.User);
+                return BadRequest(result.ErrorMessage);
             }
             catch (Exception ex)
             {
@@ -47,8 +48,9 @@ namespace HostMarket.Api.Controllers
 
             try
             {
-                var balance = await _buyerBffService.GetUserBalanceAsync(userId);
-                return Ok(balance);
+                var result = await _buyerBffService.GetUserBalanceAsync(userId);
+                if (result.Success) return Ok(result.Balance);
+                return BadRequest(result.ErrorMessage);
             }
             catch (Exception ex)
             {

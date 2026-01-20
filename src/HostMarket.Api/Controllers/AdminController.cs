@@ -55,8 +55,9 @@ namespace HostMarket.Api.Controllers
         {
             try
             {
-                if (await _adminBFFService.DeleteServerAsync(id)) return Ok(true);
-                else return BadRequest();
+                var result = await _adminBFFService.DeleteServerAsync(id);
+                if (result.Success) return Ok(result.Message);
+                else return BadRequest(result.ErrorMessage);
             }
             catch (Exception ex)
             {
@@ -69,8 +70,8 @@ namespace HostMarket.Api.Controllers
             var result = await _adminBFFService.UpdateServerInfoAsync(id);
             try
             {
-                if (await _adminBFFService.UpdateServerInfoAsync(id)) return Ok(true);
-                else return BadRequest();
+                if (result.Success) return Ok(result.Message);
+                else return BadRequest(result.ErrorMessage);
             }
             catch (Exception ex)
             {
@@ -124,7 +125,7 @@ namespace HostMarket.Api.Controllers
             var result = await _adminBFFService.GetAllTariffsAsync();
             try
             {
-                if (result.Success) return Ok(result.DataListTariff);
+                if (result.Success) return Ok(result.DataList);
                 else return BadRequest(result.ErrorMessage);
             }
             catch (Exception ex)
@@ -135,10 +136,10 @@ namespace HostMarket.Api.Controllers
         [HttpDelete("deleteTariff")]
         public async Task<IActionResult> EndpointDeleteTariffAsync(Guid id)
         {
-            try
-            {
-                if (await _adminBFFService.DeleteTariffAsync(id)) return Ok(true);
-                else return BadRequest();
+            var result = await _adminBFFService.DeleteTariffAsync(id);
+            try {
+                if (result.Success) return Ok(result.Message);
+                else return BadRequest(result.ErrorMessage);
             }
             catch (Exception ex)
             {
@@ -148,10 +149,10 @@ namespace HostMarket.Api.Controllers
         [HttpPut("updateTariff")]
         public async Task<IActionResult> EndpointUpdateTariffAsync(Guid id)
         {
-            try
-            {
-                if (await _adminBFFService.UpdateTariffAsync(id)) return Ok();
-                else return BadRequest();
+            var result = await _adminBFFService.UpdateTariffAsync(id);
+            try {
+                if (result.Success) return Ok(result.Message);
+                else return BadRequest(result.ErrorMessage);
             }
             catch (Exception ex)
             {
