@@ -95,7 +95,8 @@ public class AuthService : IAuthenticationService
                 UserName = registerDto.Username,
                 Email = registerDto.Email,
                 Password = passwordHash,
-                Code = verificationCode
+                Code = verificationCode,
+                Role = registerDto.Role
             };
 
             // Add a user to the DB
