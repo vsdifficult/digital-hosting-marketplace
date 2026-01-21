@@ -29,6 +29,10 @@ namespace HostMarket.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<string>("ContainerId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("timestamp with time zone");
 
@@ -37,8 +41,21 @@ namespace HostMarket.Infrastructure.Migrations
                         .HasMaxLength(400)
                         .HasColumnType("character varying(400)");
 
+                    b.Property<string>("IP")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Port")
+                        .HasColumnType("integer");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
+
+                    b.Property<DateTime?>("RentalEnd")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("RentalStart")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("ServStatus")
                         .HasColumnType("integer");
@@ -51,6 +68,9 @@ namespace HostMarket.Infrastructure.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("integer");
 
+                    b.Property<Guid>("TariffId")
+                        .HasColumnType("uuid");
+
                     b.Property<DateTime>("UpdateAt")
                         .HasColumnType("timestamp with time zone");
 
@@ -62,9 +82,44 @@ namespace HostMarket.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("TariffId");
+
                     b.HasIndex("UserId");
 
                     b.ToTable("Servers", "hostmarket");
+                });
+
+            modelBuilder.Entity("HostMarket.Infrastructure.Data.Entities.TariffEntity", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreateAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<decimal>("DiskGb")
+                        .HasColumnType("numeric");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("numeric");
+
+                    b.Property<decimal>("RamGb")
+                        .HasColumnType("numeric");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("TariffName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdateAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tariffs", "hostmarket");
                 });
 
             modelBuilder.Entity("HostMarket.Infrastructure.Data.Entities.TransactionEntity", b =>
@@ -90,6 +145,9 @@ namespace HostMarket.Infrastructure.Migrations
 
                     b.Property<DateTime>("transactionDate")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("transactionStatus")
+                        .HasColumnType("integer");
 
                     b.Property<Guid>("userId")
                         .HasColumnType("uuid");
@@ -159,11 +217,19 @@ namespace HostMarket.Infrastructure.Migrations
 
             modelBuilder.Entity("HostMarket.Infrastructure.Data.Entities.ServerEntity", b =>
                 {
+                    b.HasOne("HostMarket.Infrastructure.Data.Entities.TariffEntity", "Tariff")
+                        .WithMany("Servers")
+                        .HasForeignKey("TariffId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("HostMarket.Infrastructure.Data.Entities.UserEntity", "User")
                         .WithMany("Servers")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Tariff");
 
                     b.Navigation("User");
                 });
@@ -177,6 +243,11 @@ namespace HostMarket.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("HostMarket.Infrastructure.Data.Entities.TariffEntity", b =>
+                {
+                    b.Navigation("Servers");
                 });
 
             modelBuilder.Entity("HostMarket.Infrastructure.Data.Entities.UserEntity", b =>
