@@ -60,7 +60,8 @@ public class AuthService : IAuthenticationService
             return new AuthResult
             {
                 Success = false,
-                ErrorMessage = "An error occurred during sign in"
+                Message = "An error occurred during sign in",
+                ErrorMessage = ex.Message 
             };
         }
     }
@@ -96,7 +97,10 @@ public class AuthService : IAuthenticationService
                 Email = registerDto.Email,
                 Password = passwordHash,
                 Code = verificationCode,
-                Role = registerDto.Role
+                Role = registerDto.Role,
+                CreateAt = DateTime.UtcNow,
+                UpdateAt = DateTime.UtcNow,
+                RegistrationDate = DateTime.UtcNow
             };
 
             // Add a user to the DB
@@ -117,7 +121,8 @@ public class AuthService : IAuthenticationService
             return new AuthResult
             {
                 Success = false,
-                ErrorMessage = "An error occurred during sign up"
+                Message = "An error occurred during sign up",
+                ErrorMessage = ex.Message 
             };
         }
     }
@@ -136,7 +141,7 @@ public class AuthService : IAuthenticationService
     private async Task<string> GenerateTokenAsync(UserDTO user)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
-        var key = Encoding.ASCII.GetBytes(_configuration["AppSettings:JwtSecret"] ?? string.Empty);
+        var key = Encoding.ASCII.GetBytes(_configuration["AppDb:JwtSecret"] ?? string.Empty);
 
         // creating a claims list for jwt
         var claims = new List<Claim>
@@ -193,7 +198,8 @@ public class AuthService : IAuthenticationService
             return new AuthResult
             {
                 Success = false,
-                ErrorMessage = "An error occurred during verification"
+                Message = "An error occurred during verification",
+                ErrorMessage = ex.Message
             };
         }
 

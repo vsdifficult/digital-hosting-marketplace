@@ -48,6 +48,7 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Configurations
             builder.Property(s => s.RentalStart);
 
             builder.Property(s => s.RentalEnd);
+
             builder.HasOne(s => s.User)
                 .WithMany(u => u.Servers);
 

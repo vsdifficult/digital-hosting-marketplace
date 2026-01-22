@@ -20,7 +20,11 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Mappers
                 Role = entity.Role,
                 Password = entity.Password,
                 Code = entity.Code,
-                IsVerify  = entity.IsVerify
+                IsVerify  = entity.IsVerify,
+                Balance = entity.Balance,
+                RegistrationDate = entity.RegistrationDate,
+                CreateAt = entity.CreateAt,
+                UpdateAt = entity.UpdateAt
             };
         }
         public static UserEntity FromUserDTOToEntity(UserDTO dto)
@@ -33,7 +37,11 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Mappers
                 Role = dto.Role,
                 Password = dto.Password,
                 Code = dto.Code,
-                IsVerify = dto.IsVerify 
+                IsVerify = dto.IsVerify,
+                Balance = dto.Balance,
+                RegistrationDate = dto.RegistrationDate,
+                CreateAt = dto.CreateAt,
+                UpdateAt = dto.UpdateAt
             };
         }
 
@@ -43,8 +51,11 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Mappers
             entity.UserName = dto.UserName;
             entity.Role = dto.Role;
             entity.Password = dto.Password;
+            entity.Balance = dto.Balance;
             entity.Code = dto.Code;
             entity.IsVerify = dto.IsVerify;
+            entity.RegistrationDate = dto.RegistrationDate;
+            entity.CreateAt = dto.CreateAt;
             entity.UpdateAt = DateTime.UtcNow;
         }
     }

@@ -24,7 +24,7 @@ namespace HostMarket.Api.Controllers
             // a temporary solution until the implementation of the new logic with the API
             var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (string.IsNullOrEmpty(userIdString) || !Guid.TryParse(userIdString, out Guid userId))
-                return BadRequest("Неверный или отсутствующий идентификатор пользователя");
+                return BadRequest("Invalid or missing user ID.");
 
             try
             {
@@ -44,7 +44,7 @@ namespace HostMarket.Api.Controllers
             // a temporary solution until the implementation of the new logic with the API
             var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (string.IsNullOrEmpty(userIdString) || !Guid.TryParse(userIdString, out Guid userId))
-                return BadRequest("Неверный или отсутствующий идентификатор пользователя");
+                return BadRequest("Invalid or missing user ID.");
 
             try
             {
