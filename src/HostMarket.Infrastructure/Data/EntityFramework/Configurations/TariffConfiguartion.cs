@@ -39,8 +39,7 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Configurations
                 .IsRequired();
 
             builder.HasMany(x => x.Servers)
-                .WithOne(x => x.Tariff)
-                .IsRequired();
+                .WithOne(x => x.Tariff);
         }
     }
 }

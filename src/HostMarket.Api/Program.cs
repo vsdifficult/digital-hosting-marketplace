@@ -51,6 +51,7 @@ builder.Services.AddScoped<IAuthenticationService, AuthService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAdminBFFService, AdminBFFService>();
 builder.Services.AddScoped<IServerBFFService,  ServerBFFService>();
+builder.Services.AddScoped<IBuyerBffService, BuyerBffService>();
 
 builder.Services.AddControllers();
 

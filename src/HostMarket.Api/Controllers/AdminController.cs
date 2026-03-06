@@ -146,10 +146,10 @@ namespace HostMarket.Api.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpPut("updateTariff")]
-        public async Task<IActionResult> EndpointUpdateTariffAsync(Guid id)
+        [HttpPatch("updateTariff")]
+        public async Task<IActionResult> EndpointUpdateTariffAsync(Guid id, UpdateTariffDto inputDto)
         {
-            var result = await _adminBFFService.UpdateTariffAsync(id);
+            var result = await _adminBFFService.UpdateTariffAsync(id, inputDto);
             try {
                 if (result.Success) return Ok(result.Message);
                 else return BadRequest(result.ErrorMessage);

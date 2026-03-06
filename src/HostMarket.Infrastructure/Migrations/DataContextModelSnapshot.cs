@@ -74,10 +74,10 @@ namespace HostMarket.Infrastructure.Migrations
                     b.Property<DateTime>("UpdateAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("UserId")
+                    b.Property<Guid?>("UserId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("ownerId")
+                    b.Property<Guid?>("ownerId")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
@@ -225,9 +225,7 @@ namespace HostMarket.Infrastructure.Migrations
 
                     b.HasOne("HostMarket.Infrastructure.Data.Entities.UserEntity", "User")
                         .WithMany("Servers")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Tariff");
 

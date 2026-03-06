@@ -2,11 +2,6 @@
 using HostMarket.Infrastructure.Data.EntityFramework.Mappers;
 using HostMarket.Shared.DTO;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HostMarket.Infrastructure.Data.EntityFramework.Repositories
 {
@@ -20,6 +15,9 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Repositories
 
         public async Task<Guid> CreateAsync(TariffDto dto)
         {
+            dto.CreateAt = DateTime.UtcNow;
+            dto.UpdateAt = DateTime.UtcNow;
+
             var tariff = TariffMapper.FromDtoToEntity(dto);
 
             await _dataContext.Tariffs.AddAsync(tariff);

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc; 
 using HostMarket.Core.Services.Interfaces;
 using HostMarket.Shared.Dto;
+
 namespace HostMarket.Api.Controllers
 {
     [Route("api/[controller]")]
@@ -14,12 +15,13 @@ namespace HostMarket.Api.Controllers
         }
 
         [HttpPost("signup")]
-        public async Task<IActionResult> EndpointSignUpAsync([FromBody] UserRegisterDto registerDto)
+        public async Task<IActionResult> EndpointSignAsync([FromBody] UserRegisterDto registerDto)
         {
             try
             {
-                var user = await _authenticationService.SignUpAsync(registerDto);
-                return Ok(user);
+                var result = await _authenticationService.SignUpAsync(registerDto);
+                if (result.Success) return Ok(result);
+                return BadRequest(result);
             }
             catch (Exception ex)
             {
@@ -32,8 +34,9 @@ namespace HostMarket.Api.Controllers
         {
             try
             {
-                var user = await _authenticationService.SignInAsync(userLoginDTO);
-                return Ok(user);
+                var result = await _authenticationService.SignInAsync(userLoginDTO);
+                if (result.Success) return Ok(result);
+                return BadRequest(result);
             }
             catch (Exception ex)
             {
@@ -46,8 +49,9 @@ namespace HostMarket.Api.Controllers
         {
             try
             {
-                var user = await _authenticationService.VerificationAsync(verificationDto);
-                return Ok(user);
+                var result = await _authenticationService.VerificationAsync(verificationDto);
+                if (result.Success) return Ok(result);
+                return BadRequest(result);
             }
             catch (Exception ex)
             {

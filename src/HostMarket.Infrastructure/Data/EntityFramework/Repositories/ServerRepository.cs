@@ -17,6 +17,9 @@ public class ServerRepository: IServerRepository
 
     public async Task<Guid> CreateAsync(ServerDTO entity)
     {
+        entity.CreateAt = DateTime.UtcNow;
+        entity.UpdateAt = DateTime.UtcNow;
+
         var serverEntity = ServerMapper.FromDtoToEntity(entity);
 
         await _context.Servers.AddAsync(serverEntity);

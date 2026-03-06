@@ -14,7 +14,9 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Configurations
         public void Configure(EntityTypeBuilder<TransactionEntity> builder)
         {
             builder.ToTable("Transactions");
+
             builder.HasKey(t => t.Id);
+
             builder.Property(t => t.CreateAt)
                 .IsRequired();
 
@@ -24,12 +26,21 @@ namespace HostMarket.Infrastructure.Data.EntityFramework.Configurations
             builder.Property(t => t.Status)
                 .IsRequired();
 
-            builder.Property(t => t.userId).IsRequired();
-            builder.Property(t => t.serverId).IsRequired();
-            builder.Property(t => t.Amount).IsRequired();
-            builder.Property(t => t.transactionDate).IsRequired();
+            builder.Property(t => t.userId)
+                .IsRequired();
+
+            builder.Property(t => t.serverId)
+                .IsRequired();
+
+            builder.Property(t => t.Amount)
+                .IsRequired();
+
+            builder.Property(t => t.transactionDate)
+                .IsRequired();
+
             builder.Property(t => t.transactionStatus);
-            builder.HasOne(t => t.User).WithMany(t => t.Transactions).IsRequired();
+
+            builder.HasOne(t => t.User).WithMany(t => t.Transactions);
         }
     }
 }

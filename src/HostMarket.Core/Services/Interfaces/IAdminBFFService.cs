@@ -1,11 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Dynamic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using HostMarket.Infrastructure.Data.DTO;
-using HostMarket.Shared.Dto;
 using HostMarket.Shared.DTO;
 using HostMarket.Shared.Models;
 
@@ -39,7 +32,7 @@ public interface IAdminBFFService
     Task<AdminResult<object>> DeleteServerAsync(Guid serverId);
     Task<ServerResult> GetServerStatusAsync(Guid serverId);
     Task<AdminResult<object>> CreateTariffAsync(CreateTariffDto createTariffDto);
-    Task<AdminResult<object>> UpdateTariffAsync(Guid tariffId);
+    Task<AdminResult<object>> UpdateTariffAsync(Guid tariffId, UpdateTariffDto inputDto);
     Task<AdminResult<object>> DeleteTariffAsync(Guid tariffId);
     Task<AdminResult<IEnumerable<TariffDto>>> GetAllTariffsAsync();
 }
