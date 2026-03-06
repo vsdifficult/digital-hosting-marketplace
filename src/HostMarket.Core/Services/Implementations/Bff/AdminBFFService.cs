@@ -1,12 +1,7 @@
-using HostMarket.Core.Repositories;
 using HostMarket.Core.Services.Interfaces;
-using HostMarket.Infrastructure.Data;
 using HostMarket.Infrastructure.Data.DTO;
-using HostMarket.Shared.Dto;
 using HostMarket.Shared.DTO;
 using HostMarket.Shared.Models;
-using System;
-using System.Data.Common;
 using Docker.DotNet; 
 
 namespace HostMarket.Core.Services.Implementations.Bff;
@@ -221,11 +216,17 @@ public class AdminBFFService : IAdminBFFService
         return new AdminResult<object> { Success = true, Message = "The tariff has been created." };
     }
 
-    public async Task<AdminResult<object>> UpdateTariffAsync(Guid tariffId)
+    public async Task<AdminResult<object>> UpdateTariffAsync(Guid tariffId, UpdateTariffDto inputDto)
     {
         var tariff = await _dataService.Tariffs.GetByIdAsync(tariffId);
         if (tariff == null)
             return new AdminResult<object> { Success = false, Message = "The tariff was not found." };
+
+        tariff.TariffName = string.IsNullOrWhiteSpace(inputDto.TariffName) ? tariff.TariffName : inputDto.TariffName;
+        tariff.RamGb = inputDto.RamGb ?? tariff.RamGb;
+        tariff.DiskGb = inputDto.DiskGb ?? tariff.DiskGb;
+        tariff.Status = inputDto.Status ?? tariff.Status;
+        tariff.Price = inputDto.Price ?? tariff.Price;
 
         await _dataService.Tariffs.UpdateAsync(tariff);
         return new AdminResult<object> { Success = true, ErrorMessage = "The tariff has been updated." };

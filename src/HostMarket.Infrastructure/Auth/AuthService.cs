@@ -1,9 +1,6 @@
-
 using HostMarket.Core.Repositories;
 using HostMarket.Core.Services.Interfaces;
-using HostMarket.Infrastructure.Data.DTO;
 using HostMarket.Shared.Dto;
-using HostMarket.Shared.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -43,7 +40,7 @@ public class AuthService : IAuthenticationService
             }
 
             // Genering jwt-token 
-            var token = await GenerateTokenAsync(user);
+            var token = GenerateToken(user);
 
             // return the report
             return new AuthResult
@@ -106,13 +103,17 @@ public class AuthService : IAuthenticationService
             // Add a user to the DB
             await _userRepository.CreateAsync(user);
 
+            // Genering jwt-token 
+            var token = GenerateToken(user);
+
             // Return the report
             return new AuthResult
             {
                 Success = true,
                 UserId = user.Id,
                 Role = user.Role,
-                Code = user.Code
+                Code = user.Code,
+                Token = token.ToString()
             };
         }
 
@@ -138,7 +139,7 @@ public class AuthService : IAuthenticationService
     // ----- Sup part -----
 
     // Generate jwt-token function
-    private async Task<string> GenerateTokenAsync(UserDTO user)
+    private string GenerateToken(UserDTO user)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
         var key = Encoding.ASCII.GetBytes(_configuration["AppDb:JwtSecret"] ?? string.Empty);

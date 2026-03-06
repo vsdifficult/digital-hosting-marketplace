@@ -27,4 +27,12 @@ namespace HostMarket.Shared.DTO
         public decimal Price { get; set; }
         public Status Status { get; set; }
     }
+    public class UpdateTariffDto
+    {
+        public string? TariffName { get; set; }
+        public decimal? RamGb { get; set; }
+        public decimal? DiskGb { get; set; }
+        public decimal? Price { get; set; }
+        public Status? Status { get; set; }
+    }
 }

@@ -2,11 +2,6 @@
 using HostMarket.Infrastructure.Data.EntityFramework.Mappers;
 using HostMarket.Shared.DTO;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HostMarket.Infrastructure.Data.EntityFramework.Repositories
 {
